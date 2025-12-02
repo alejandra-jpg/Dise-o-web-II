@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ejemplo de menú de navegación responsive con efectos modernos">
+    <title>Navegación Moderna | Ejercicio 3</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Agregar Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navegación Principal -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <span class="logo-icon">🚀</span>
+                <span class="logo-text">TechCorp</span>
+            </a>
+
+            <!-- Toggle para móvil (hamburguesa) -->
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                <span class="hamburger"></span>
+            </button>
+
+            <!-- Menú de navegación -->
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#inicio" class="nav-link active"><i class="fas fa-home"></i> Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#servicios" class="nav-link"><i class="fas fa-cogs"></i> Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#portafolio" class="nav-link"><i class="fas fa-briefcase"></i> Portafolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#equipo" class="nav-link"><i class="fas fa-users"></i> Equipo</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#blog" class="nav-link"><i class="fas fa-blog"></i> Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contacto" class="nav-link btn-cta"><i class="fas fa-envelope"></i> Contactar</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Navegación Moderna y Responsive</h1>
+                <p>Este menú demuestra el uso de pseudo-clases CSS y diseño responsive.</p>
+                <a href="#servicios" class="btn-hero">Explorar Servicios</a>
+            </div>
+            
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop" 
+                     alt="Tecnología moderna" 
+                     loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="servicios">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <p>Ofrecemos soluciones tecnológicas innovadoras para tu negocio.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop" 
+                             alt="Desarrollo Web" 
+                             loading="lazy">
+                    </div>
+                    <h3>Desarrollo Web</h3>
+                    <p>Creamos sitios web modernos, rápidos y optimizados para SEO.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop" 
+                             alt="Diseño UI/UX" 
+                             loading="lazy">
+                    </div>
+                    <h3>Diseño UI/UX</h3>
+                    <p>Diseños intuitivos y atractivos que mejoran la experiencia del usuario.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop" 
+                             alt="Marketing Digital" 
+                             loading="lazy">
+                    </div>
+                    <h3>Marketing Digital</h3>
+                    <p>Estrategias digitales para aumentar tu presencia en línea.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="portafolio">
+        <div class="container">
+            <h2>Portafolio de Proyectos</h2>
+            <p>Algunos de nuestros trabajos más destacados.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&h=350&fit=crop" 
+                         alt="Proyecto E-commerce" 
+                         loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Tienda Online</h3>
+                        <p>E-commerce completo con carrito de compras</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=350&fit=crop" 
+                         alt="App Móvil" 
+                         loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>App Móvil</h3>
+                        <p>Aplicación nativa para iOS y Android</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="equipo">
+        <div class="container">
+            <h2>Nuestro Equipo</h2>
+            <p>Conoce a los profesionales que harán realidad tu proyecto.</p>
+            
+           <div class="team-grid">
+    <div class="team-member">
+        <img src="imagenes/alejandra.jpeg" alt="Maria Alejandra Alvarez" loading="lazy">
+        <h3>Maria Alejandra Alvarez</h3>
+        <p>CEO & Fundadora</p>
+    </div>
+
+         <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop" 
+                         alt="Carlos Rodríguez" 
+                         loading="lazy">
+                    <h3>Carlos Rodríguez</h3>
+                    <p>Desarrollador Frontend</p>
+                </div>
+                
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop" 
+                         alt="Ana Martínez" 
+                         loading="lazy">
+                    <h3>Ana Martínez</h3>
+                    <p>Diseñadora UI/UX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+
+    <section class="content-section" id="blog">
+    <div class="container">
+        <h2><i class="fas fa-newspaper"></i> Últimas del Blog</h2>
+        <p>Artículos y noticias sobre tecnología y desarrollo web.</p>
+        
+        <div class="blog-grid">
+            <div class="blog-post">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w-400&h=250&fit=crop" 
+                         alt="Desarrollo Web Moderno" 
+                         loading="lazy">
+                </div>
+                <div class="blog-content">
+                    <h3>El Futuro del Diseño Web en 2025</h3>
+                    <p class="blog-meta"><i class="far fa-calendar"></i> 25 Nov 2025</p>
+                    <p>Exploramos las tendencias más importantes que definirán el diseño web el próximo año.</p>
+                    <a href="#" class="btn-read">Leer más</a>
+                </div>
+            </div>
+            
+            <div class="blog-post">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop" 
+                         alt="Inteligencia Artificial" 
+                         loading="lazy">
+                </div>
+                <div class="blog-content">
+                    <h3>IA en el Desarrollo Web</h3>
+                    <p class="blog-meta"><i class="far fa-calendar"></i> 20 Nov 2025</p>
+                    <p>Cómo la inteligencia artificial está revolucionando la creación de sitios web.</p>
+                    <a href="#" class="btn-read">Leer más</a>
+                </div>
+            </div>
+            
+            <div class="blog-post">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop" 
+                         alt="Performance Web" 
+                         loading="lazy">
+                </div>
+                <div class="blog-content">
+                    <h3>Optimización de Performance</h3>
+                    <p class="blog-meta"><i class="far fa-calendar"></i> 15 Nov 2025</p>
+                    <p>Técnicas avanzadas para mejorar la velocidad de carga de tu sitio web.</p>
+                    <a href="#" class="btn-read">Leer más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section" id="contacto">
+    <div class="container">
+        <h2><i class="fas fa-envelope"></i> Contáctanos</h2>
+        <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
+        
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>Teléfono</h3>
+                    <p>+34 123 456 789</p>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>info@techcorp.com</p>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Ubicación</h3>
+                    <p>Barcelona, España</p>
+                </div>
+            </div>
+            
+            <form class="contact-form">
+                <input type="text" placeholder="Tu nombre" required>
+                <input type="email" placeholder="Tu email" required>
+                <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+                <button type="submit" class="btn-submit">Enviar Mensaje</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 TechCorp. Ejercicio de navegación responsive.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript para el menú hamburguesa -->
+    <script src="scripts.js"></script>
+</body>
+</html>
