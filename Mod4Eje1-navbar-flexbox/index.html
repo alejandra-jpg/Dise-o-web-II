@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesignPro - Experiencias Digitales Vibrantes</title>
+    <!-- CORREGIDO: Cambiar styles-vibrant.css por styles.css -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Efectos de partículas flotantes -->
+    <div class="floating-shapes">
+        <div style="width: 50px; height: 50px; left: 10%; animation-delay: 0s;"></div>
+        <div style="width: 30px; height: 30px; left: 20%; animation-delay: 2s;"></div>
+        <div style="width: 40px; height: 40px; left: 80%; animation-delay: 4s;"></div>
+        <div style="width: 60px; height: 60px; left: 40%; animation-delay: 6s;"></div>
+        <div style="width: 20px; height: 20px; left: 70%; animation-delay: 8s;"></div>
+    </div>
+
+    <!-- Navbar sticky con flexbox -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <div class="navbar-logo">
+                <a href="#inicio">
+                    <!-- CORREGIDO: Añadido gradiente SVG -->
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-logo)" stroke-width="2">
+                        <defs>
+                            <linearGradient id="gradient-logo" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#6C63FF" />
+                                <stop offset="100%" stop-color="#36D1DC" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    <span>DesignPro</span>
+                </a>
+            </div>
+
+            <!-- Menú de navegación -->
+            <ul class="navbar-menu" id="navbarMenu">
+                <li><a href="#inicio" class="nav-link active"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="#servicios" class="nav-link"><i class="fas fa-magic"></i> Servicios</a></li>
+                <li><a href="#portfolio" class="nav-link"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                <li><a href="#testimonios" class="nav-link"><i class="fas fa-comment-dots"></i> Testimonios</a></li>
+                <li><a href="#contacto" class="nav-link"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+
+            <!-- Botones de acción -->
+            <div class="navbar-actions">
+                <button class="btn btn-login"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>
+                <button class="btn btn-signup"><i class="fas fa-user-plus"></i> Registrarse</button>
+            </div>
+
+            <!-- Botón hamburguesa para móviles -->
+            <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- Sección Inicio -->
+        <section id="inicio" class="section section-hero">
+            <div class="section-content">
+                <h1 class="fade-in">¡Crea Experiencias Digitales Épicas!</h1>
+                <p class="fade-in">Transformamos ideas en realidades digitales impactantes con diseño innovador y tecnología de vanguardia.</p>
+                <button class="btn btn-cta fade-in"><i class="fas fa-rocket"></i> ¡Comenzar Aventura!</button>
+                <div class="hero-stats fade-in">
+                    <div class="stat">
+                        <h3>250+</h3>
+                        <p>Proyectos Exitosos</p>
+                    </div>
+                    <div class="stat">
+                        <h3>98%</h3>
+                        <p>Clientes Satisfechos</p>
+                    </div>
+                    <div class="stat">
+                        <h3>5+</h3>
+                        <p>Años de Experiencia</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Servicios -->
+        <section id="servicios" class="section">
+            <div class="section-content">
+                <h2>Servicios de Alto Impacto</h2>
+                <div class="services-grid">
+                    <div class="service-card" style="--delay: 0">
+                        <div class="service-icon">🚀</div>
+                        <h3>Diseño UI/UX Avanzado</h3>
+                        <p>Interfaces que cautivan y experiencias de usuario memorables que convierten visitantes en clientes.</p>
+                        <div class="service-features">
+                            <span><i class="fas fa-check-circle"></i> Prototipado Interactivo</span>
+                            <span><i class="fas fa-check-circle"></i> Pruebas de Usabilidad</span>
+                        </div>
+                    </div>
+                    <div class="service-card" style="--delay: 1">
+                        <div class="service-icon">⚡</div>
+                        <h3>Desarrollo Web Full-Stack</h3>
+                        <p>Aplicaciones web rápidas, escalables y seguras con las tecnologías más modernas del mercado.</p>
+                        <div class="service-features">
+                            <span><i class="fas fa-check-circle"></i> React/Vue.js</span>
+                            <span><i class="fas fa-check-circle"></i> Node.js/Python</span>
+                        </div>
+                    </div>
+                    <div class="service-card" style="--delay: 2">
+                        <div class="service-icon">📱</div>
+                        <h3>Apps Móviles Premium</h3>
+                        <p>Aplicaciones nativas y multiplataforma con rendimiento excepcional y diseño impresionante.</p>
+                        <div class="service-features">
+                            <span><i class="fas fa-check-circle"></i> iOS & Android</span>
+                            <span><i class="fas fa-check-circle"></i> React Native/Flutter</span>
+                        </div>
+                    </div>
+                    <div class="service-card" style="--delay: 3">
+                        <div class="service-icon">🎯</div>
+                        <h3>Marketing Digital Inteligente</h3>
+                        <p>Estrategias data-driven para maximizar tu visibilidad online y convertir leads en ventas.</p>
+                        <div class="service-features">
+                            <span><i class="fas fa-check-circle"></i> SEO Avanzado</span>
+                            <span><i class="fas fa-check-circle"></i> Campañas PPC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Portfolio -->
+        <section id="portfolio" class="section section-dark">
+            <div class="section-content">
+                <h2>Nuestras Creaciones Destacadas</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=350&fit=crop" alt="Proyecto E-commerce">
+                        <div class="portfolio-overlay">
+                            <h3>E-commerce Luxury Fashion</h3>
+                            <p>Tienda online premium con realidad aumentada</p>
+                            <div class="portfolio-tech">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=350&fit=crop" alt="Dashboard Analytics">
+                        <div class="portfolio-overlay">
+                            <h3>Dashboard Analytics Pro</h3>
+                            <p>Panel de control con visualización de datos en tiempo real</p>
+                            <div class="portfolio-tech">
+                                <span>Vue.js</span>
+                                <span>D3.js</span>
+                                <span>Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=350&fit=crop" alt="App Fitness">
+                        <div class="portfolio-overlay">
+                            <h3>FitLife App</h3>
+                            <p>Aplicación de entrenamiento personalizado con IA</p>
+                            <div class="portfolio-tech">
+                                <span>React Native</span>
+                                <span>Python</span>
+                                <span>TensorFlow</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Testimonios -->
+        <section id="testimonios" class="section">
+            <div class="section-content">
+                <h2>Lo Que Dicen Nuestros Clientes</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Increíble trabajo. No solo cumplieron con los plazos, sino que superaron todas nuestras expectativas. El diseño es simplemente espectacular y la funcionalidad perfecta. ¡Totalmente recomendados!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="María González">
+                            <div>
+                                <strong>María González</strong>
+                                <span>CEO, TechStart Solutions</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">"Profesionales, creativos y extremadamente detallistas. Transformaron completamente nuestra presencia digital. Las métricas de conversión aumentaron un 300% después de lanzar el nuevo sitio. ¡Impresionante!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Carlos Ramírez">
+                            <div>
+                                <strong>Carlos Ramírez</strong>
+                                <span>Director, Innovate Co.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="section section-contact">
+            <div class="section-content">
+                <h2>¡Hablemos de Tu Proyecto!</h2>
+                <p>¿Listo para llevar tu idea al siguiente nivel? ¡Estamos aquí para hacerlo realidad!</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <strong>Email</strong>
+                            <span>hola@designpro.com</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <div>
+                            <strong>Teléfono</strong>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <strong>Ubicación</strong>
+                            <span>Innovation District, Tech City</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Envíanos un Mensaje</h3>
+                    <form>
+                        <input type="text" placeholder="Tu nombre" required>
+                        <input type="email" placeholder="Tu email" required>
+                        <textarea placeholder="Cuéntanos sobre tu proyecto..." rows="4" required></textarea>
+                        <button type="submit" class="btn btn-cta">Enviar Mensaje <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <!-- CORREGIDO: Añadido gradiente SVG para el footer -->
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-logo-footer)" stroke-width="2">
+                    <defs>
+                        <linearGradient id="gradient-logo-footer" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#6C63FF" />
+                            <stop offset="100%" stop-color="#36D1DC" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span>DesignPro</span>
+            </div>
+            <p>Transformando ideas en experiencias digitales extraordinarias.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-dribbble"></i></a>
+            </div>
+            <p class="copyright">&copy; 2024 DesignPro. Todos los derechos reservados. | <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a></p>
+        </div>
+    </footer>
+
+    <!-- CORREGIDO: Cambiar script-vibrant.js por script.js -->
+    <script src="script.js"></script>
+</body>
+</html>

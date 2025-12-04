@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución: Card con Badge - Posicionados</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-tags"></i> Cards con Badges Posicionados</h1>
+        <p class="subtitle">Ejemplos de position: absolute con imágenes y colores vibrantes</p>
+        
+        <div class="cards-grid">
+            <!-- Card 1: Badge esquina superior derecha -->
+            <div class="card">
+                <span class="badge badge-new"><i class="fas fa-rocket"></i> NUEVO</span>
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=300&fit=crop&crop=center&q=80" alt="Smartphone colorido">
+                </div>
+                <div class="card-content">
+                    <h3>Smartphone Neon</h3>
+                    <p>Pantalla AMOLED de 6.5" con colores vibrantes y cámara cuádruple de 108MP. Batería de 5000mAh con carga rápida de 65W.</p>
+                    <div class="features">
+                        <span><i class="fas fa-bolt"></i> Carga rápida</span>
+                        <span><i class="fas fa-camera"></i> 108MP</span>
+                        <span><i class="fas fa-sun"></i> AMOLED</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price">$499.99</span>
+                        <button class="btn"><i class="fas fa-cart-plus"></i> Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Badge con descuento -->
+            <div class="card">
+                <span class="badge badge-discount"><i class="fas fa-percentage"></i> -30%</span>
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&crop=center&q=80" alt="Teclado mecánico RGB">
+                </div>
+                <div class="card-content">
+                    <h3>Teclado Gaming RGB</h3>
+                    <p>Teclado mecánico con switches azules, retroiluminación RGB personalizable y construcción en aluminio. Incluye reposamuñecas magnético.</p>
+                    <div class="features">
+                        <span><i class="fas fa-keyboard"></i> Mecánico</span>
+                        <span><i class="fas fa-palette"></i> RGB</span>
+                        <span><i class="fas fa-gamepad"></i> Gaming</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="original-price">$129.99</span>
+                        <span class="price">$89.99</span>
+                        <button class="btn"><i class="fas fa-cart-plus"></i> Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Badge de oferta -->
+            <div class="card">
+                <span class="badge badge-hot"><i class="fas fa-fire"></i> MÁS VENDIDO</span>
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=400&h=300&fit=crop&crop=center&q=80" alt="Cámara profesional">
+                </div>
+                <div class="card-content">
+                    <h3>Cámara Mirrorless 4K</h3>
+                    <p>Sensor full-frame de 45MP, grabación de video 4K a 60fps y estabilización de imagen en 5 ejes. Incluye lente 24-70mm f/2.8.</p>
+                    <div class="features">
+                        <span><i class="fas fa-video"></i> 4K</span>
+                        <span><i class="fas fa-expand"></i> Full-Frame</span>
+                        <span><i class="fas fa-camera-retro"></i> 45MP</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price">$1,299.99</span>
+                        <button class="btn"><i class="fas fa-cart-plus"></i> Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Badge de agotándose -->
+            <div class="card">
+                <span class="badge badge-limited"><i class="fas fa-clock"></i> ¡ÚLTIMOS 5!</span>
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=300&fit=crop&crop=center&q=80" alt="Zapatillas deportivas fluorescentes">
+                </div>
+                <div class="card-content">
+                    <h3>Zapatillas LED Futuristas</h3>
+                    <p>Zapatillas con luces LED programables, suela con amortiguación de gel y materiales reflectantes para mayor seguridad nocturna.</p>
+                    <div class="features">
+                        <span><i class="fas fa-lightbulb"></i> LED</span>
+                        <span><i class="fas fa-shoe-prints"></i> Gel</span>
+                        <span><i class="fas fa-battery-full"></i> Recargable</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price">$149.99</span>
+                        <button class="btn"><i class="fas fa-cart-plus"></i> Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Badge premium -->
+            <div class="card">
+                <span class="badge badge-premium"><i class="fas fa-crown"></i> EDICIÓN PREMIUM</span>
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=300&fit=crop&crop=center&q=80" alt="Laptop delgada">
+                </div>
+                <div class="card-content">
+                    <h3>Laptop Ultradelgada</h3>
+                    <p>Procesador i9 de 12ª generación, 32GB RAM, 2TB SSD y pantalla OLED táctil de 14". Diseño en titanio de solo 1.1kg de peso.</p>
+                    <div class="features">
+                        <span><i class="fas fa-microchip"></i> i9</span>
+                        <span><i class="fas fa-memory"></i> 32GB</span>
+                        <span><i class="fas fa-weight"></i> 1.1kg</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price">$2,199.99</span>
+                        <button class="btn"><i class="fas fa-cart-plus"></i> Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6: Badge bestseller -->
+            <div class="card">
+                <span class="badge badge-bestseller"><i class="fas fa-star"></i> ★ TOP VENTAS</span>
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400&h=300&fit=crop&crop=center&q=80" alt="Smartwatch deportivo">
+                </div>
+                <div class="card-content">
+                    <h3>Smartwatch Deportivo Pro</h3>
+                    <p>Monitoreo avanzado de salud con ECG, oxímetro y seguimiento de sueño. Resistente al agua 100m y autonomía de 14 días.</p>
+                    <div class="features">
+                        <span><i class="fas fa-heartbeat"></i> ECG</span>
+                        <span><i class="fas fa-water"></i> 100m</span>
+                        <span><i class="fas fa-bed"></i> Sueño</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price">$329.99</span>
+                        <button class="btn"><i class="fas fa-cart-plus"></i> Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="color-info">
+            <h3><i class="fas fa-palette"></i> Paleta de colores utilizada:</h3>
+            <div class="color-palette">
+                <div class="color-sample" style="background: #FF3CAC;"></div>
+                <div class="color-sample" style="background: #FF9A00;"></div>
+                <div class="color-sample" style="background: #00DFA2;"></div>
+                <div class="color-sample" style="background: #0079FF;"></div>
+                <div class="color-sample" style="background: #F6FA70;"></div>
+                <div class="color-sample" style="background: #FF0060;"></div>
+            </div>
+            <p class="color-names">Neon Rosa • Naranja Intenso • Verde Cian • Azul Eléctrico • Amarillo Fluorescente • Rosa Fucsia</p>
+        </div>
+    </div>
+</body>
+</html>
