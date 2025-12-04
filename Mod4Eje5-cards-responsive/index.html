@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Proyectos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1><i class="fas fa-rocket"></i> Galería de Proyectos</h1>
+            <p>Descubre nuestros proyectos innovadores en diseño y tecnología</p>
+            <div class="header-stats">
+                <span><i class="fas fa-project-diagram"></i> 12 Proyectos</span>
+                <span><i class="fas fa-users"></i> 8 Clientes</span>
+                <span><i class="fas fa-award"></i> 5 Premios</span>
+            </div>
+        </header>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">
+                <i class="fas fa-th-large"></i> Todos
+            </button>
+            <button class="filter-btn" data-filter="web">
+                <i class="fas fa-globe"></i> Web
+            </button>
+            <button class="filter-btn" data-filter="mobile">
+                <i class="fas fa-mobile-alt"></i> Móvil
+            </button>
+            <button class="filter-btn" data-filter="design">
+                <i class="fas fa-palette"></i> Diseño
+            </button>
+            <button class="filter-btn" data-filter="branding">
+                <i class="fas fa-trademark"></i> Branding
+            </button>
+            <button class="filter-btn" data-filter="ecommerce">
+                <i class="fas fa-shopping-cart"></i> E-commerce
+            </button>
+        </div>
+
+        <div class="cards-grid">
+            <!-- Proyecto 1 -->
+            <div class="card" data-category="web ecommerce">
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=350&fit=crop&crop=center" alt="Tienda Online">
+                    <div class="card-overlay">
+                        <span><i class="fas fa-clock"></i> 3 meses</span>
+                        <span><i class="fas fa-star"></i> 4.8</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="card-tag web-tag">Web & E-commerce</span>
+                    <h3>Tienda Online Premium</h3>
+                    <p>Plataforma de comercio electrónico con integración de pagos, sistema de inventario y dashboard analítico en tiempo real.</p>
+                    <div class="card-tech">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                    </div>
+                    <button class="btn">
+                        <i class="fas fa-external-link-alt"></i> Ver Demo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div class="card" data-category="mobile">
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1579113800032-c38bd7635818?w=500&h=350&fit=crop&crop=center" alt="App Salud">
+                    <div class="card-overlay">
+                        <span><i class="fas fa-clock"></i> 4 meses</span>
+                        <span><i class="fas fa-star"></i> 4.9</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="card-tag mobile-tag">Aplicación Móvil</span>
+                    <h3>Wellness Tracker Pro</h3>
+                    <p>App integral de salud que monitora actividad física, sueño y nutrición con IA personalizada y reportes médicos.</p>
+                    <div class="card-tech">
+                        <span>React Native</span>
+                        <span>Firebase</span>
+                        <span>TensorFlow</span>
+                    </div>
+                    <button class="btn">
+                        <i class="fas fa-external-link-alt"></i> Ver Demo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Proyecto 3 -->
+            <div class="card" data-category="design branding">
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?w=500&h=350&fit=crop&crop=center" alt="Identidad Corporativa">
+                    <div class="card-overlay">
+                        <span><i class="fas fa-clock"></i> 2 meses</span>
+                        <span><i class="fas fa-star"></i> 5.0</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="card-tag design-tag">Diseño & Branding</span>
+                    <h3>NovaTech Identity</h3>
+                    <p>Rediseño completo de identidad corporativa para startup tecnológica: logotipo, paleta de colores y manual de marca.</p>
+                    <div class="card-tech">
+                        <span>Illustrator</span>
+                        <span>After Effects</span>
+                        <span>Figma</span>
+                    </div>
+                    <button class="btn">
+                        <i class="fas fa-external-link-alt"></i> Ver Demo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Proyecto 4 -->
+            <div class="card" data-category="web">
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=350&fit=crop&crop=center" alt="Dashboard Analítico">
+                    <div class="card-overlay">
+                        <span><i class="fas fa-clock"></i> 5 meses</span>
+                        <span><i class="fas fa-star"></i> 4.7</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="card-tag web-tag">Dashboard Web</span>
+                    <h3>DataVision Analytics</h3>
+                    <p>Plataforma de análisis de datos con visualizaciones interactivas, reportes automatizados y predicciones con machine learning.</p>
+                    <div class="card-tech">
+                        <span>Vue.js</span>
+                        <span>Python</span>
+                        <span>D3.js</span>
+                    </div>
+                    <button class="btn">
+                        <i class="fas fa-external-link-alt"></i> Ver Demo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Proyecto 5 -->
+            <div class="card" data-category="mobile">
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500&h=350&fit=crop&crop=center" alt="App Finanzas">
+                    <div class="card-overlay">
+                        <span><i class="fas fa-clock"></i> 6 meses</span>
+                        <span><i class="fas fa-star"></i> 4.8</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="card-tag mobile-tag">FinTech Móvil</span>
+                    <h3>FinSmart Wallet</h3>
+                    <p>Aplicación de gestión financiera personal con seguimiento de gastos, inversiones y asesoría automatizada.</p>
+                    <div class="card-tech">
+                        <span>Flutter</span>
+                        <span>Blockchain</span>
+                        <span>API REST</span>
+                    </div>
+                    <button class="btn">
+                        <i class="fas fa-external-link-alt"></i> Ver Demo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Proyecto 6 -->
+            <div class="card" data-category="design">
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=500&h=350&fit=crop&crop=center" alt="UI/UX Design">
+                    <div class="card-overlay">
+                        <span><i class="fas fa-clock"></i> 3 meses</span>
+                        <span><i class="fas fa-star"></i> 4.9</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="card-tag design-tag">UI/UX Design</span>
+                    <h3>Quantum UI System</h3>
+                    <p>Sistema de diseño completo con componentes accesibles, patrones de interacción y guías de usabilidad avanzadas.</p>
+                    <div class="card-tech">
+                        <span>Figma</span>
+                        <span>Sketch</span>
+                        <span>Principle</span>
+                    </div>
+                    <button class="btn">
+                        <i class="fas fa-external-link-alt"></i> Ver Demo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Proyecto 7 -->
+            <div class="card" data-category="ecommerce web">
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae?w=500&h=350&fit=crop&crop=center" alt="Marketplace">
+                    <div class="card-overlay">
+                        <span><i class="fas fa-clock"></i> 8 meses</span>
+                        <span><i class="fas fa-star"></i> 4.6</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="card-tag ecommerce-tag">Marketplace</span>
+                    <h3>Artisan Hub</h3>
+                    <p>Plataforma de comercio colaborativo para artesanos independientes con sistema de reputación y pagos seguros.</p>
+                    <div class="card-tech">
+                        <span>Next.js</span>
+                        <span>Stripe</span>
+                        <span>AWS</span>
+                    </div>
+                    <button class="btn">
+                        <i class="fas fa-external-link-alt"></i> Ver Demo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Proyecto 8 -->
+            <div class="card" data-category="branding design">
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?w=500&h=350&fit=crop&crop=center" alt="Rediseño de Marca">
+                    <div class="card-overlay">
+                        <span><i class="fas fa-clock"></i> 4 meses</span>
+                        <span><i class="fas fa-star"></i> 5.0</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="card-tag branding-tag">Rebranding</span>
+                    <h3>EcoLife Redesign</h3>
+                    <p>Rediseño estratégico de marca para empresa de productos sostenibles, incluyendo packaging y estrategia digital.</p>
+                    <div class="card-tech">
+                        <span>Photoshop</span>
+                        <span>InDesign</span>
+                        <span>Blender 3D</span>
+                    </div>
+                    <button class="btn">
+                        <i class="fas fa-external-link-alt"></i> Ver Demo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Proyecto 9 -->
+            <div class="card" data-category="web mobile">
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=350&fit=crop&crop=center" alt="Plataforma Educativa">
+                    <div class="card-overlay">
+                        <span><i class="fas fa-clock"></i> 7 meses</span>
+                        <span><i class="fas fa-star"></i> 4.9</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="card-tag web-tag">EdTech Platform</span>
+                    <h3>LearnSphere Pro</h3>
+                    <p>Plataforma de aprendizaje adaptativo con cursos interactivos, evaluaciones en tiempo real y certificaciones digitales.</p>
+                    <div class="card-tech">
+                        <span>React</span>
+                        <span>GraphQL</span>
+                        <span>WebRTC</span>
+                    </div>
+                    <button class="btn">
+                        <i class="fas fa-external-link-alt"></i> Ver Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="page-footer">
+            <p>© 2023 Portafolio Creativo. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-behance"></i></a>
+                <a href="#"><i class="fab fa-dribbble"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Filtrado de proyectos
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remover clase active de todos los botones
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Agregar clase active al botón clickeado
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Filtrar las cards
+                    cards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category').includes(filterValue)) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeInUp 0.6s ease';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Efecto hover en botones de proyecto
+            const projectButtons = document.querySelectorAll('.btn');
+            projectButtons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.innerHTML = '<i class="fas fa-external-link-alt"></i> Explorar Proyecto';
+                });
+                button.addEventListener('mouseleave', function() {
+                    this.innerHTML = '<i class="fas fa-external-link-alt"></i> Ver Demo';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
