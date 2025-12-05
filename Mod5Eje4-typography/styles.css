@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e6f7ff 0%, #f0fff4 100%);
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    background: linear-gradient(45deg, #1a2980, #26d0ce, #2ebf91);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+header p {
+    color: #4a5568;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 500;
+}
+
+/* ========================================
+   GRID RESPONSIVE CON AUTO-FIT
+   ======================================== */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+}
+
+/* ========================================
+   GALLERY ITEMS
+   ======================================== */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: white;
+    border: 5px solid transparent;
+}
+
+.gallery-item:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.2);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.4));
+    color: white;
+    padding: 1.8rem;
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+    backdrop-filter: blur(5px);
+}
+
+.gallery-item:hover .overlay {
+    transform: translateY(0);
+}
+
+.overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    font-weight: 700;
+}
+
+.overlay p {
+    font-size: 1rem;
+    color: #e2e8f0;
+    background: rgba(42, 67, 101, 0.7);
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    border-radius: 25px;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Colores de borde específicos para montañas */
+.gallery-item:nth-child(1) { border-color: #1a2980; }
+.gallery-item:nth-child(2) { border-color: #26d0ce; }
+.gallery-item:nth-child(3) { border-color: #2ebf91; }
+.gallery-item:nth-child(4) { border-color: #4776E6; }
+.gallery-item:nth-child(5) { border-color: #8E54E9; }
+.gallery-item:nth-child(6) { border-color: #614385; }
+.gallery-item:nth-child(7) { border-color: #1a2980; }
+.gallery-item:nth-child(8) { border-color: #26d0ce; }
+.gallery-item:nth-child(9) { border-color: #2ebf91; }
+.gallery-item:nth-child(10) { border-color: #4776E6; }
+.gallery-item:nth-child(11) { border-color: #8E54E9; }
+.gallery-item:nth-child(12) { border-color: #614385; }
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Móvil pequeño: 1 columna */
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    body {
+        padding: 1rem 0.5rem;
+    }
+    
+    .overlay {
+        padding: 1.2rem;
+    }
+}
+
+/* Tablet: Ajustar gap */
+@media (min-width: 768px) {
+    .gallery {
+        gap: 2.2rem;
+    }
+}
+
+/* Desktop: Ajustar tamaño mínimo */
+@media (min-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    
+    .gallery-item img {
+        height: 350px;
+    }
+}
+
+/* Desktop grande: Límite de columnas */
+@media (min-width: 1400px) {
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
