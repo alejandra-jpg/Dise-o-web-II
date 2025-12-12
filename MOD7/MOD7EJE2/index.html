@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Switcher - Sistema de Temas Dinámicos</title>
+    <meta name="description" content="Sistema de temas claro/oscuro con persistencia">
+    <link rel="stylesheet" href="style.css">
+    <!-- Añadir icono -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌓</text></svg>">
+</head>
+<body>
+
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox" aria-label="Cambiar tema">
+            <input type="checkbox" id="checkbox" aria-checked="false" />
+            <div class="slider round"></div>
+        </label>
+        <span id="theme-label">Cambiar Tema</span>
+    </div>
+
+    <main class="card">
+        <div class="avatar-container">
+            <img src="alejandra.jpeg" alt="Foto de perfil de Maria Alejandra Alvarez" class="avatar">
+        </div>
+        <h2>Maria Alejandra Alvarez</h2>
+        <p class="role">Frontend Developer</p>
+        <p class="desc">Especializada en crear experiencias web accesibles y responsivas.</p>
+
+        
+        <div class="buttons">
+            <button class="btn btn-outline" aria-label="Seguir a Maria Alejandra Alvarez">Follow</button>
+            <button class="btn btn-outline" aria-label="Enviar mensaje a Maria Alejandra Alvarez">Message</button>
+        </div>
+    </main>
+
+    <!-- Pie de página opcional -->
+    <footer class="footer">
+        <small>Tema actual: <span id="current-theme">claro</span></small>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

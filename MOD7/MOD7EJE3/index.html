@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misión 03: Layouts Complejos con Grid y Flexbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER CON grid-template-areas -->
+    <header class="page-header">
+        
+        <div class="header-controls">
+            <button class="btn" id="toggleDense">Toggle Dense Mode: ON</button>
+            <button class="btn" id="randomize">Aleatorizar Tamaños</button>
+        </div>
+    </header>
+
+    <!-- GALERÍA MASONRY PRINCIPAL -->
+    <main class="gallery-grid">
+        
+        <article class="card">
+            <figure>
+                <img src="https://picsum.photos/id/10/400/300" alt="Bosque">
+            </figure>
+            <div class="card-content">
+                <h3>Naturaleza</h3>
+                <p>Ejemplo de tarjeta normal con aspect-ratio 4:3</p>
+            </div>
+        </article>
+
+        <article class="card card-tall">
+            <figure>
+                <img src="https://picsum.photos/id/15/300/400" alt="Cascada">
+            </figure>
+            <div class="card-content">
+                <h3>Aventura</h3>
+                <p>Tarjeta alta con aspect-ratio 3:4 y grid-row: span 42</p>
+            </div>
+        </article>
+
+        <article class="card">
+            <figure>
+                <img src="https://picsum.photos/id/28/600/300" alt="Paisaje">
+            </figure>
+            <div class="card-content">
+                <h3>Horizonte</h3>
+                <p>Tarjeta normal mostrando grid-auto-flow: dense</p>
+            </div>
+        </article>
+
+        <article class="card">
+            <figure>
+                <img src="https://picsum.photos/id/40/400/300" alt="Gato">
+            </figure>
+            <div class="card-content">
+                <h3>Mascotas</h3>
+                <p>Otra tarjeta normal</p>
+            </div>
+        </article>
+
+        <article class="card card-big">
+            <figure>
+                <img src="https://picsum.photos/id/56/400/400" alt="Ciudad">
+            </figure>
+            <div class="card-content">
+                <h3>Urbanismo</h3>
+                <p>Tarjeta grande con aspect-ratio 1:1</p>
+            </div>
+        </article>
+
+        <article class="card card-tall">
+            <figure>
+                <img src="https://picsum.photos/id/88/300/400" alt="Arquitectura">
+            </figure>
+            <div class="card-content">
+                <h3>Diseño</h3>
+                <p>grid-auto-flow: dense rellena huecos automáticamente</p>
+            </div>
+        </article>
+
+        <article class="card card-wide">
+            <figure>
+                <img src="https://picsum.photos/id/96/600/300" alt="Tecnología">
+            </figure>
+            <div class="card-content">
+                <h3>Tecnología</h3>
+                <p>Tarjeta ancha (solo en pantallas grandes)</p>
+            </div>
+        </article>
+
+        <article class="card">
+            <figure>
+                <img src="https://picsum.photos/id/120/400/300" alt="Playas">
+            </figure>
+            <div class="card-content">
+                <h3>Vacaciones</h3>
+                <p>Responsive con auto-fill y minmax()</p>
+            </div>
+        </article>
+
+        <article class="card">
+            <figure>
+                <img src="https://picsum.photos/id/152/400/300" alt="Montañas">
+            </figure>
+            <div class="card-content">
+                <h3>Montañas</h3>
+                <p>Sin media queries para columnas básicas</p>
+            </div>
+        </article>
+
+        <article class="card card-tall">
+            <figure>
+                <img src="https://picsum.photos/id/168/300/400" alt="Arte">
+            </figure>
+            <div class="card-content">
+                <h3>Arte</h3>
+                <p>Combinación perfecta de Grid y Flexbox</p>
+            </div>
+        </article>
+
+        <!-- Tarjetas adicionales para mejor efecto masonry -->
+        <article class="card">
+            <figure>
+                <img src="https://picsum.photos/id/200/400/300" alt="Deportes">
+            </figure>
+            <div class="card-content">
+                <h3>Deportes</h3>
+                <p>Actividad física al aire libre</p>
+            </div>
+        </article>
+
+        <article class="card">
+            <figure>
+                <img src="https://picsum.photos/id/201/400/300" alt="Música">
+            </figure>
+            <div class="card-content">
+                <h3>Música</h3>
+                <p>Arte sonoro y expresión cultural</p>
+            </div>
+        </article>
+
+    </main>
+
+    
+
+    
+
+    <script src="app.js"></script>
+</body>
+</html>

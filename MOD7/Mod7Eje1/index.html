@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaciones CSS Avanzadas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Hero con animación -->
+        <section class="hero">
+            <h1 class="hero-title">Animaciones CSS</h1>
+            <p class="hero-subtitle">Explora el poder de las animaciones avanzadas</p>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="arrow"></div>
+            </div>
+        </section>
+
+        <!-- Loading Spinner -->
+        <section class="section">
+            <h2>Loading Animations</h2>
+            <div class="loaders">
+                <div class="spinner"></div>
+                <div class="dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="pulse-ring"></div>
+            </div>
+        </section>
+
+         <!-- Cards con hover effects -->
+        <section class="section">
+            <h2>Hover Effects Avanzados</h2>
+            <div class="cards-grid">
+                <div class="card card-flip">
+                    <div class="card-front">
+                        <h3>Flip Card</h3>
+                        <p>Hover para voltear</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>¡Sorpresa!</h3>
+                        <p>Efecto flip 3D</p>
+                    </div>
+                </div>
+
+                <div class="card card-slide">
+                    <!-- URL CORREGIDA para Unsplash -->
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80" 
+                         alt="Código de programación">
+                    <div class="card-overlay">
+                        <h3>Slide Overlay</h3>
+                        <p>Overlay deslizante</p>
+                    </div>
+                </div>
+
+                <div class="card card-zoom">
+                    <!-- URL CORREGIDA para Unsplash -->
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80" 
+                         alt="Laptop en escritorio">
+                    <div class="card-content">
+                        <h3>Zoom Effect</h3>
+                        <p>Imagen con zoom</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Animaciones de entrada -->
+        <section class="section">
+            <h2>Scroll Animations</h2>
+            <div class="animate-on-scroll fade-in">
+                <h3>Fade In</h3>
+                <p>Aparece suavemente al hacer scroll</p>
+            </div>
+            <div class="animate-on-scroll slide-in-left">
+                <h3>Slide from Left</h3>
+                <p>Entra desde la izquierda</p>
+            </div>
+            <div class="animate-on-scroll slide-in-right">
+                <h3>Slide from Right</h3>
+                <p>Entra desde la derecha</p>
+            </div>
+            <div class="animate-on-scroll zoom-in">
+                <h3>Zoom In</h3>
+                <p>Crece desde el centro</p>
+            </div>
+        </section>
+
+        <!-- Buttons con efectos -->
+        <section class="section">
+            <h2>Button Animations</h2>
+            <div class="buttons-grid">
+                <button class="btn btn-ripple">Ripple Effect</button>
+                <button class="btn btn-slide">Slide Background</button>
+                <button class="btn btn-glow">Glow Effect</button>
+                <button class="btn btn-bounce">Bounce Effect</button>
+            </div>
+        </section>
+
+        <!-- Texto animado -->
+        <section class="section">
+            <h2>Text Animations</h2>
+            <h1 class="glitch" data-text="GLITCH">GLITCH</h1>
+            <h1 class="gradient-text">Gradient Animation</h1>
+            <h1 class="typing-text">Texto escribiéndose...</h1>
+        </section>
+
+        <!-- Galería Interactiva Animada -->
+        <section class="gallery-section">
+            <h2>Galería Interactiva Animada</h2>
+            <div class="gallery-controls">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="nature">Naturaleza</button>
+                <button class="filter-btn" data-filter="tech">Tecnología</button>
+                <button class="filter-btn" data-filter="art">Arte</button>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="nature">
+                    <img src="naturaleza1.jpg" alt="Naturaleza 1">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Montañas</h3>
+                        <p class="gallery-description">Paisaje montañoso al atardecer</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="tech">
+                    <img src="tecnologia1.jpg" alt="Tecnología 1">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Código</h3>
+                        <p class="gallery-description">Desarrollo web moderno</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="art">
+                    <img src="arte1.jpg" alt="Arte 1">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Arte Abstracto</h3>
+                        <p class="gallery-description">Expresión creativa</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="nature">
+                    <img src="naturaleza2.jpg" alt="Naturaleza 2">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Bosque</h3>
+                        <p class="gallery-description">Sendero en el bosque</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="tech">
+                    <img src="tecnologia2.jpg" alt="Tecnología 2">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Robótica</h3>
+                        <p class="gallery-description">Tecnología avanzada</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="art">
+                    <img src="arte2.jpg" alt="Arte 2">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Escultura</h3>
+                        <p class="gallery-description">Arte en 3D</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="nature">
+                    <img src="naturaleza3.jpg" alt="Naturaleza 3">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Lago</h3>
+                        <p class="gallery-description">Reflejos en el agua</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="tech">
+                    <img src="tecnologia3.jpg" alt="Tecnología 3">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Redes</h3>
+                        <p class="gallery-description">Conexiones digitales</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal para vista ampliada -->
+        <div class="gallery-modal">
+            <span class="modal-close">&times;</span>
+            <img class="modal-content" src="" alt="Imagen ampliada">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

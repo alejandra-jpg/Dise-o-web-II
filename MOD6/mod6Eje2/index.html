@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .stats-card {
+            transition: all 0.3s ease;
+            border-top: 4px solid;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(102, 126, 234, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0); }
+        }
+        
+        .glow-button {
+            background: linear-gradient(90deg, #ff0080, #ff8c00, #00d4ff);
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease infinite;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .glow-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .sidebar-item {
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sidebar-item:hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shine 1.5s infinite;
+        }
+        
+        @keyframes shine {
+            to { left: 100%; }
+        }
+        
+        .status-badge {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-gray-300">
+    <!-- Navbar -->
+    <nav class="bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg relative overflow-hidden">
+        <div class="absolute inset-0 bg-white opacity-10"></div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-white flex items-center gap-2">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path>
+                        </svg>
+                        Dash<span class="text-yellow-300">Pro</span>
+                    </span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="glow-button px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                        Nuevo Reporte
+                    </button>
+                    <button class="relative p-2 rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                        </svg>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-xs rounded-full h-5 w-5 flex items-center justify-center text-white pulse-animation">3</span>
+                    </button>
+                    <div class="flex items-center gap-3">
+                        <img src="https://i.pravatar.cc/40" alt="User" class="w-10 h-10 rounded-full border-2 border-white shadow-lg">
+                        <div>
+                            <p class="text-white text-sm font-bold">Admin User</p>
+                            <p class="text-white text-opacity-80 text-xs">Administrador</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gradient-to-b from-gray-900 to-gray-800 min-h-screen shadow-2xl">
+            <div class="p-6 border-b border-gray-700">
+                <h3 class="text-white text-lg font-bold">Menú Principal</h3>
+                <p class="text-gray-400 text-sm">Panel de control</p>
+            </div>
+            <nav class="mt-8">
+                <a href="#" class="sidebar-item flex items-center px-6 py-4 text-white bg-gradient-to-r from-purple-600 to-pink-600">
+                    <div class="bg-white bg-opacity-20 p-2 rounded-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                    </div>
+                    <span class="ml-4 font-bold">Dashboard</span>
+                </a>
+                <a href="#" class="sidebar-item flex items-center px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-700">
+                    <div class="bg-blue-500 bg-opacity-20 p-2 rounded-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <span class="ml-4">Usuarios</span>
+                </a>
+                <a href="#" class="sidebar-item flex items-center px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-700">
+                    <div class="bg-green-500 bg-opacity-20 p-2 rounded-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <span class="ml-4">Analíticas</span>
+                </a>
+                <a href="#" class="sidebar-item flex items-center px-6 py-4 text-gray-300 hover:text-white hover:bg-gray-700">
+                    <div class="bg-yellow-500 bg-opacity-20 p-2 rounded-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <span class="ml-4">Configuración</span>
+                </a>
+            </nav>
+            
+            <div class="absolute bottom-0 w-full p-6">
+                <button class="glow-button w-full py-3 rounded-lg text-sm font-bold">
+                    <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                    </svg>
+                    Cerrar Sesión
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <div class="flex justify-between items-center mb-8">
+                <h1 class="text-3xl font-bold text-gray-800">Dashboard <span class="text-purple-600">2024</span></h1>
+                <div class="flex gap-4">
+                    <button class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-2 rounded-lg font-bold hover:shadow-lg transition shadow-md">
+                        Exportar Datos
+                    </button>
+                    <button class="bg-gradient-to-r from-blue-500 to-cyan-600 text-white px-6 py-2 rounded-lg font-bold hover:shadow-lg transition shadow-md">
+                        + Agregar Nuevo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <!-- Tarjeta 1 - Usuarios -->
+                <div class="stats-card bg-white rounded-xl shadow-md border-t-4 border-blue-500">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm font-semibold">Total Usuarios</p>
+                                <p class="text-3xl font-bold text-gray-800">2,543</p>
+                                <div class="flex items-center mt-2">
+                                    <span class="text-green-500 text-sm font-bold">↑ 12.5%</span>
+                                    <span class="text-gray-400 text-sm ml-2">vs mes anterior</span>
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-br from-blue-500 to-blue-600 p-3 rounded-full shadow-lg">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2 - Ingresos -->
+                <div class="stats-card bg-white rounded-xl shadow-md border-t-4 border-green-500">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm font-semibold">Ingresos</p>
+                                <p class="text-3xl font-bold text-gray-800">$45,678</p>
+                                <div class="flex items-center mt-2">
+                                    <span class="text-green-500 text-sm font-bold">↑ 8.2%</span>
+                                    <span class="text-gray-400 text-sm ml-2">vs mes anterior</span>
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-br from-green-500 to-emerald-600 p-3 rounded-full shadow-lg">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3 - Pedidos -->
+                <div class="stats-card bg-white rounded-xl shadow-md border-t-4 border-orange-500">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm font-semibold">Pedidos</p>
+                                <p class="text-3xl font-bold text-gray-800">1,234</p>
+                                <div class="flex items-center mt-2">
+                                    <span class="text-red-500 text-sm font-bold">↓ 3.1%</span>
+                                    <span class="text-gray-400 text-sm ml-2">vs mes anterior</span>
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-br from-orange-500 to-red-500 p-3 rounded-full shadow-lg">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 4 - Satisfacción -->
+                <div class="stats-card bg-white rounded-xl shadow-md border-t-4 border-purple-500">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500 text-sm font-semibold">Satisfacción</p>
+                                <p class="text-3xl font-bold text-gray-800">4.8/5</p>
+                                <div class="flex items-center mt-2">
+                                    <span class="text-green-500 text-sm font-bold">↑ 0.3</span>
+                                    <span class="text-gray-400 text-sm ml-2">vs trimestre anterior</span>
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-br from-purple-500 to-pink-600 p-3 rounded-full shadow-lg">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Orders Table -->
+            <div class="bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div class="px-6 py-4 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-white">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-xl font-bold text-gray-800">Pedidos Recientes</h2>
+                        <button class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg text-sm font-bold hover:shadow-lg transition">
+                            Ver Todos →
+                        </button>
+                    </div>
+                </div>
+                <table class="w-full">
+                    <thead class="bg-gradient-to-r from-gray-100 to-gray-200">
+                        <tr>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">ID</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Cliente</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Producto</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Fecha</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Monto</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 transition">
+                            <td class="px-6 py-4">
+                                <span class="font-bold text-blue-600">#1234</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center">
+                                    <img src="https://i.pravatar.cc/32" alt="User" class="w-8 h-8 rounded-full mr-3">
+                                    <span class="font-medium text-gray-900">Juan Pérez</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 font-medium text-gray-900">Laptop Pro</td>
+                            <td class="px-6 py-4 text-gray-600 font-medium">2024-01-15</td>
+                            <td class="px-6 py-4">
+                                <span class="bg-gradient-to-r from-green-100 to-green-50 text-green-800 font-bold px-3 py-1 rounded-lg">$1,299</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="status-badge px-3 py-1 text-xs font-bold text-green-800 bg-gradient-to-r from-green-200 to-green-300 rounded-full shadow">✓ Completado</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gradient-to-r hover:from-yellow-50 hover:to-yellow-100 transition">
+                            <td class="px-6 py-4">
+                                <span class="font-bold text-blue-600">#1235</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center">
+                                    <img src="https://i.pravatar.cc/32?img=2" alt="User" class="w-8 h-8 rounded-full mr-3">
+                                    <span class="font-medium text-gray-900">María García</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 font-medium text-gray-900">Mouse Wireless</td>
+                            <td class="px-6 py-4 text-gray-600 font-medium">2024-01-15</td>
+                            <td class="px-6 py-4">
+                                <span class="bg-gradient-to-r from-blue-100 to-blue-50 text-blue-800 font-bold px-3 py-1 rounded-lg">$49</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="status-badge px-3 py-1 text-xs font-bold text-yellow-800 bg-gradient-to-r from-yellow-200 to-yellow-300 rounded-full shadow">⏳ Pendiente</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gradient-to-r hover:from-purple-50 hover:to-purple-100 transition">
+                            <td class="px-6 py-4">
+                                <span class="font-bold text-blue-600">#1236</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center">
+                                    <img src="https://i.pravatar.cc/32?img=3" alt="User" class="w-8 h-8 rounded-full mr-3">
+                                    <span class="font-medium text-gray-900">Carlos López</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 font-medium text-gray-900">Teclado Mecánico</td>
+                            <td class="px-6 py-4 text-gray-600 font-medium">2024-01-14</td>
+                            <td class="px-6 py-4">
+                                <span class="bg-gradient-to-r from-purple-100 to-purple-50 text-purple-800 font-bold px-3 py-1 rounded-lg">$129</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="status-badge px-3 py-1 text-xs font-bold text-blue-800 bg-gradient-to-r from-blue-200 to-blue-300 rounded-full shadow">⚡ Procesando</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

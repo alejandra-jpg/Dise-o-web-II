@@ -1,0 +1,286 @@
+/* =========================================
+   1. DEFINICIÓN DE VARIABLES GLOBALES (:root)
+   ========================================= */
+:root {
+    /* COLORES PRIMITIVOS VIBRANTES */
+    --color-white: #ffffff;
+    --color-gray-50: #f0f4ff; /* Azul muy claro */
+    --color-gray-100: #d9e2ff;
+    --color-gray-300: #a8b8ff;
+    --color-gray-500: #6c7cff;
+    --color-gray-800: #3d4fbd;
+    --color-gray-900: #1a237e;
+    --color-dark-bg: #0f0f23; /* Azul nocturno oscuro */
+    --color-dark-card: #1a1a3a;
+    --color-blue: #4361ee; /* Azul eléctrico vibrante */
+    --color-blue-light: #6ee7ff;
+    --color-purple: #9d4edd; /* Púrpura vibrante */
+    --color-pink: #ff4081; /* Rosa neón */
+    --color-gradient-start: #4361ee;
+    --color-gradient-end: #9d4edd;
+
+    /* VARIABLES SEMÁNTICAS MEJORADAS */
+    --bg-body: linear-gradient(135deg, var(--color-gray-50), #e0e7ff);
+    --bg-card: var(--color-white);
+    --text-primary: var(--color-gray-900);
+    --text-secondary: var(--color-gray-800);
+    --btn-border: var(--color-purple);
+    --btn-text: var(--color-purple);
+    --btn-hover-bg: linear-gradient(45deg, var(--color-blue), var(--color-purple));
+    --btn-hover-text: var(--color-white);
+    --shadow-color: rgba(67, 97, 238, 0.15);
+    --shadow-color-strong: rgba(157, 78, 221, 0.25);
+}
+
+/* =========================================
+   2. EL TEMA OSCURO (Sobrescritura)
+   ========================================= */
+[data-theme="dark"] {
+    --bg-body: linear-gradient(135deg, #0a0a1a, var(--color-dark-bg));
+    --bg-card: linear-gradient(145deg, #1a1a3a, #252552);
+    --text-primary: #f0f4ff;
+    --text-secondary: #a8b8ff;
+    --shadow-color: rgba(110, 231, 255, 0.1);
+    --shadow-color-strong: rgba(157, 78, 221, 0.3);
+    --btn-border: var(--color-blue-light);
+    --btn-text: var(--color-blue-light);
+    --btn-hover-bg: linear-gradient(45deg, var(--color-blue-light), var(--color-pink));
+    --btn-hover-text: #0f0f23;
+}
+
+/* =========================================
+   3. ESTILOS GENERALES
+   ========================================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-body);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Contenedor principal */
+.card {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px var(--shadow-color),
+                0 2px 8px var(--shadow-color-strong);
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
+}
+
+/* Mejora de la imagen de avatar */
+.avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    border: 4px solid transparent;
+    background: linear-gradient(45deg, var(--color-blue), var(--color-purple)) border-box;
+    object-fit: cover;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 0 20px rgba(157, 78, 221, 0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+h2 { 
+    margin: 0 0 0.5rem 0; 
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.role {
+    color: var(--text-secondary);
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Botones mejorados */
+.buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 10px 24px;
+    border: 2px solid var(--btn-border);
+    background: transparent;
+    color: var(--btn-text);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 120px;
+    outline: none;
+}
+
+.btn:hover,
+.btn:focus {
+    background: var(--btn-hover-bg);
+    color: var(--btn-hover-text);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* =========================================
+   4. ESTILO DEL INTERRUPTOR MEJORADO
+   ========================================= */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    background-color: var(--bg-card);
+    border-radius: 50px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+    margin-right: 15px;
+}
+
+.theme-switch input { 
+    display: none; 
+}
+
+.slider {
+    background-color: var(--color-gray-300);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    background-color: var(--color-white);
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .slider { 
+    background: linear-gradient(90deg, var(--color-blue), var(--color-purple));
+}
+
+input:checked + .slider:before { 
+    transform: translateX(26px); 
+}
+
+#theme-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+/* =========================================
+   5. FOOTER Y ELEMENTOS ADICIONALES
+   ========================================= */
+.footer {
+    margin-top: 30px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+#current-theme {
+    font-weight: bold;
+    color: var(--btn-text);
+}
+
+/* =========================================
+   6. MEJORAS DE ACCESIBILIDAD
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+    body,
+    .card,
+    .btn,
+    .slider,
+    .slider:before {
+        transition: none !important;
+    }
+}
+
+/* Focus visible para mejor accesibilidad */
+.btn:focus-visible,
+.theme-switch:focus-visible {
+    outline: 2px solid var(--btn-border);
+    outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    .card {
+        padding: 1.5rem;
+    }
+    
+    .buttons {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}

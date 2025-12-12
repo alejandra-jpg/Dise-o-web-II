@@ -1,0 +1,184 @@
+/* ===== ESTILOS BASE ===== */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.min-vh-75 {
+    min-height: 75vh;
+}
+
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+footer a {
+    transition: opacity 0.3s;
+}
+
+footer a:hover {
+    opacity: 0.7;
+}
+
+/* ===== NAVBAR ANIMADA ===== */
+.navbar {
+    background: linear-gradient(90deg, #ff0080, #ff8c00, #00d4ff);
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== HERO CON PARTÍCULAS ===== */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.3) 2px, transparent 2px),
+        radial-gradient(circle at 40% 30%, rgba(255, 255, 255, 0.3) 3px, transparent 3px),
+        radial-gradient(circle at 80% 60%, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+        radial-gradient(circle at 60% 10%, rgba(255, 255, 255, 0.3) 2px, transparent 2px),
+        radial-gradient(circle at 90% 90%, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+    background-size: 150px 150px;
+    animation: particlesMove 20s linear infinite;
+    z-index: 0;
+}
+
+.hero-section > .container {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes particlesMove {
+    0% { transform: translateY(0) translateX(0); }
+    100% { transform: translateY(-150px) translateX(50px); }
+}
+
+/* ===== TARJETAS DE SKILLS COLORIDAS ===== */
+#skills .card:nth-child(1) {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: white;
+    border: none;
+}
+
+#skills .card:nth-child(2) {
+    background: linear-gradient(135deg, #4ecdc4, #44a08d);
+    color: white;
+    border: none;
+}
+
+#skills .card:nth-child(3) {
+    background: linear-gradient(135deg, #ffd166, #ffb347);
+    color: #333;
+    border: none;
+}
+
+#skills .card i {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#skills .card:nth-child(3) i {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+/* ===== CONTACTO CON FONDO ANIMADO ===== */
+#contact {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+    color: white;
+}
+
+#contact .form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+#contact .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+    color: white;
+}
+
+#contact .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#contact .btn-primary {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+#contact .btn-primary:hover {
+    background-color: white;
+    color: #23a6d5;
+    transform: scale(1.05);
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== EFECTO EN TÍTULOS ===== */
+h1, h2 {
+    position: relative;
+    display: inline-block;
+}
+
+h1::after, h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+    animation: underlineGlow 2s ease-in-out infinite;
+}
+
+@keyframes underlineGlow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* ===== BOTONES CON EFECTO ===== */
+.btn-outline-primary {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-outline-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+    z-index: -1;
+}
+
+.btn-outline-primary:hover::before {
+    left: 100%;
+}
