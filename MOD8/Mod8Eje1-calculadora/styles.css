@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 25%, #6bcf7f 50%, #4d96ff 75%, #9d4edd 100%);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.calculator {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    padding: 2rem;
+    box-shadow: 
+        0 25px 75px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(255, 107, 107, 0.4),
+        0 0 30px rgba(77, 150, 255, 0.4) inset;
+    max-width: 450px;
+    width: 100%;
+    border: 5px solid white;
+    position: relative;
+    overflow: hidden;
+}
+
+.calculator::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6bcf7f, #4d96ff, #9d4edd);
+    z-index: -1;
+    border-radius: 30px;
+    filter: blur(15px);
+    opacity: 0.6;
+}
+
+.display {
+    background: linear-gradient(145deg, #1a1a2e, #16213e);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: right;
+    min-height: 120px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        inset 0 5px 15px rgba(0, 0, 0, 0.5),
+        0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.display::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b6b, #ffd93d, #6bcf7f, #4d96ff, #9d4edd);
+}
+
+.previous-operand {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.3rem;
+    min-height: 1.8rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.current-operand {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    letter-spacing: 1px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    padding: 1.5rem;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 700;
+    box-shadow: 
+        0 6px 0 rgba(0, 0, 0, 0.2),
+        0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 1px;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 9px 0 rgba(0, 0, 0, 0.2),
+        0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 
+        0 3px 0 rgba(0, 0, 0, 0.2),
+        0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-number {
+    background: linear-gradient(145deg, #6a89cc, #4a69bd);
+    color: white;
+    border-bottom: 4px solid #1e3799;
+}
+
+.btn-number:hover {
+    background: linear-gradient(145deg, #4a69bd, #1e3799);
+}
+
+.btn-operator {
+    background: linear-gradient(145deg, #ff9f43, #ff9f1a);
+    color: white;
+    border-bottom: 4px solid #cc7a00;
+}
+
+.btn-operator:hover {
+    background: linear-gradient(145deg, #ff9f1a, #cc7a00);
+}
+
+.btn-clear {
+    background: linear-gradient(145deg, #ff6b6b, #ff3838);
+    color: white;
+    border-bottom: 4px solid #c23616;
+}
+
+.btn-clear:hover {
+    background: linear-gradient(145deg, #ff3838, #c23616);
+}
+
+.btn-delete {
+    background: linear-gradient(145deg, #ffd32a, #ffa502);
+    color: #333;
+    border-bottom: 4px solid #cc8400;
+}
+
+.btn-delete:hover {
+    background: linear-gradient(145deg, #ffa502, #cc8400);
+    color: white;
+}
+
+.btn-equals {
+    background: linear-gradient(145deg, #0be881, #05c46b);
+    color: white;
+    border-bottom: 4px solid #0a8c4d;
+}
+
+.btn-equals:hover {
+    background: linear-gradient(145deg, #05c46b, #0a8c4d);
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.history {
+    border-top: 3px solid rgba(106, 137, 204, 0.3);
+    padding-top: 1.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.history h3 {
+    color: #4a69bd;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.history h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b6b, #ffd93d, #6bcf7f, #4d96ff, #9d4edd);
+    border-radius: 3px;
+}
+
+.history-list {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 1.5rem;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    border: 1px solid rgba(74, 105, 189, 0.2);
+}
+
+.history-item {
+    background: linear-gradient(90deg, rgba(106, 137, 204, 0.1), rgba(255, 255, 255, 0.8));
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #4a69bd;
+    border-left: 4px solid #ff6b6b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.history-item:hover {
+    transform: translateX(5px);
+    background: linear-gradient(90deg, rgba(106, 137, 204, 0.2), rgba(255, 255, 255, 0.9));
+}
+
+.btn-clear-history {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(145deg, #ff6b6b, #ff3838);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    box-shadow: 
+        0 5px 0 rgba(194, 54, 22, 0.5),
+        0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s;
+    text-transform: uppercase;
+}
+
+.btn-clear-history:hover {
+    background: linear-gradient(145deg, #ff3838, #c23616);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 7px 0 rgba(194, 54, 22, 0.5),
+        0 7px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-clear-history:active {
+    transform: translateY(0);
+    box-shadow: 
+        0 3px 0 rgba(194, 54, 22, 0.5),
+        0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrollbar personalizada */
+.history-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.history-list::-webkit-scrollbar-track {
+    background: rgba(106, 137, 204, 0.1);
+    border-radius: 10px;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #ff6b6b, #4d96ff);
+    border-radius: 10px;
+}
+
+.history-list::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #ff3838, #1e90ff);
+}
+
+/* Efectos de brillo en botones */
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 5px currentColor; }
+    50% { box-shadow: 0 0 20px currentColor; }
+}
+
+.btn-operator:hover {
+    animation: glow 1.5s infinite;
+    color: #ff9f1a;
+}
+
+.btn-equals:hover {
+    animation: glow 1.5s infinite;
+    color: #0be881;
+}
+
+.btn-clear:hover {
+    animation: glow 1.5s infinite;
+    color: #ff3838;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .calculator {
+        padding: 1.5rem;
+    }
+    
+    .btn {
+        padding: 1.2rem;
+        font-size: 1.2rem;
+    }
+    
+    .current-operand {
+        font-size: 2.5rem;
+    }
+}

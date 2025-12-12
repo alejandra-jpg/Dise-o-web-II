@@ -1,0 +1,572 @@
+/* =====================================
+   RESET Y VARIABLES MEJORADAS
+   ===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colores vibrantes */
+    --color-positive: #00ff88;
+    --color-negative: #ff3366;
+    --color-neutral: #8a2be2;
+    --color-primary: #6a11cb;
+    --color-secondary: #2575fc;
+    
+    /* Fondos con gradientes */
+    --bg-positive: linear-gradient(135deg, #00ff88 0%, #00ccff 100%);
+    --bg-negative: linear-gradient(135deg, #ff3366 0%, #ff9966 100%);
+    --bg-neutral: linear-gradient(135deg, #8a2be2 0%, #4a00e0 100%);
+    --bg-display: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --bg-body: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    
+    /* Botones con gradientes */
+    --btn-success: linear-gradient(135deg, #00ff88 0%, #00ccff 100%);
+    --btn-danger: linear-gradient(135deg, #ff3366 0%, #ff9966 100%);
+    --btn-secondary: linear-gradient(135deg, #8a2be2 0%, #4a00e0 100%);
+    --btn-bonus: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+    
+    /* Sombras neumórficas */
+    --shadow-light: 20px 20px 60px #0d0a24, -20px -20px 60px #1a1738;
+    --shadow-medium: 10px 10px 30px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.05);
+    --shadow-button: 0 10px 20px rgba(0, 0, 0, 0.3), 0 6px 6px rgba(0, 0, 0, 0.2);
+    --shadow-glow: 0 0 20px rgba(0, 255, 136, 0.5);
+    
+    /* Espaciado */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Transiciones */
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+body {
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+    background: var(--bg-body);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-lg);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Fondo animado */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(0, 255, 136, 0.2) 0%, transparent 50%);
+    z-index: -1;
+    animation: backgroundShift 20s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundShift {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-50px, -50px) scale(1.1); }
+}
+
+/* =====================================
+   CONTENEDOR PRINCIPAL - DISEÑO GLASSMORPHISM
+   ===================================== */
+
+.container {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: var(--spacing-xl);
+    border-radius: 30px;
+    box-shadow: var(--shadow-light);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    animation: containerEntrance 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes containerEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.03) 50%,
+        transparent 70%
+    );
+    animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+    0% { transform: rotate(0deg) translateX(-100%); }
+    100% { transform: rotate(360deg) translateX(100%); }
+}
+
+.titulo {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #fff 0%, #a8edea 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: var(--spacing-xl);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: inline-block;
+}
+
+.titulo::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00ff88, transparent);
+    border-radius: 2px;
+}
+
+/* =====================================
+   DISPLAY DEL CONTADOR - DISEÑO ESPACIAL
+   ===================================== */
+
+.contador-display {
+    background: rgba(0, 0, 0, 0.3);
+    padding: var(--spacing-xl);
+    border-radius: 25px;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        inset 0 0 20px rgba(0, 0, 0, 0.5),
+        0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+}
+
+/* Efecto de partículas flotantes */
+.contador-display::before {
+    content: '✦ ✦ ✦';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 1.5rem;
+    animation: floatParticles 10s infinite linear;
+}
+
+@keyframes floatParticles {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.numero {
+    font-size: 6rem;
+    font-weight: 900;
+    color: white;
+    display: block;
+    transition: var(--transition);
+    position: relative;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    font-family: 'Orbitron', monospace;
+    letter-spacing: 2px;
+}
+
+/* Estados del número con efectos mejorados */
+.numero.positivo {
+    background: var(--bg-positive);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: pulsoPositivo 0.5s ease, glowPositive 2s infinite alternate;
+}
+
+.numero.negativo {
+    background: var(--bg-negative);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: pulsoNegativo 0.5s ease, glowNegative 2s infinite alternate;
+}
+
+.numero.neutro {
+    background: var(--bg-neutral);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: glowNeutral 2s infinite alternate;
+}
+
+/* Animaciones de pulso mejoradas */
+@keyframes pulsoPositivo {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulsoNegativo {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+/* Efectos de brillo */
+@keyframes glowPositive {
+    0% { 
+        text-shadow: 0 0 10px rgba(0, 255, 136, 0.5),
+                     0 0 20px rgba(0, 255, 136, 0.3),
+                     0 0 30px rgba(0, 255, 136, 0.2);
+    }
+    100% { 
+        text-shadow: 0 0 20px rgba(0, 255, 136, 0.8),
+                     0 0 40px rgba(0, 255, 136, 0.6),
+                     0 0 60px rgba(0, 255, 136, 0.4);
+    }
+}
+
+@keyframes glowNegative {
+    0% { 
+        text-shadow: 0 0 10px rgba(255, 51, 102, 0.5),
+                     0 0 20px rgba(255, 51, 102, 0.3),
+                     0 0 30px rgba(255, 51, 102, 0.2);
+    }
+    100% { 
+        text-shadow: 0 0 20px rgba(255, 51, 102, 0.8),
+                     0 0 40px rgba(255, 51, 102, 0.6),
+                     0 0 60px rgba(255, 51, 102, 0.4);
+    }
+}
+
+@keyframes glowNeutral {
+    0% { 
+        text-shadow: 0 0 10px rgba(138, 43, 226, 0.5),
+                     0 0 20px rgba(138, 43, 226, 0.3),
+                     0 0 30px rgba(138, 43, 226, 0.2);
+    }
+    100% { 
+        text-shadow: 0 0 20px rgba(138, 43, 226, 0.8),
+                     0 0 40px rgba(138, 43, 226, 0.6),
+                     0 0 60px rgba(138, 43, 226, 0.4);
+    }
+}
+
+/* Cambio de fondo del display */
+.contador-display.bg-positivo {
+    background: rgba(0, 255, 136, 0.1);
+    border-color: rgba(0, 255, 136, 0.3);
+    box-shadow: 
+        inset 0 0 30px rgba(0, 255, 136, 0.2),
+        0 0 30px rgba(0, 255, 136, 0.3);
+}
+
+.contador-display.bg-negativo {
+    background: rgba(255, 51, 102, 0.1);
+    border-color: rgba(255, 51, 102, 0.3);
+    box-shadow: 
+        inset 0 0 30px rgba(255, 51, 102, 0.2),
+        0 0 30px rgba(255, 51, 102, 0.3);
+}
+
+.contador-display.bg-neutro {
+    background: rgba(138, 43, 226, 0.1);
+    border-color: rgba(138, 43, 226, 0.3);
+    box-shadow: 
+        inset 0 0 30px rgba(138, 43, 226, 0.2),
+        0 0 30px rgba(138, 43, 226, 0.3);
+}
+
+/* =====================================
+   BOTONES - DISEÑO FUTURISTA
+   ===================================== */
+
+.botones {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    flex: 1;
+    min-width: 140px;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-button);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn .icono {
+    font-size: 2rem;
+    font-weight: bold;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+}
+
+.btn-success {
+    background: var(--btn-success);
+}
+
+.btn-success:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 255, 136, 0.4);
+}
+
+.btn-danger {
+    background: var(--btn-danger);
+}
+
+.btn-danger:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(255, 51, 102, 0.4);
+}
+
+.btn-secondary {
+    background: var(--btn-secondary);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(138, 43, 226, 0.4);
+}
+
+.btn:active {
+    transform: translateY(0) scale(0.98);
+    transition: all 0.1s;
+}
+
+/* Botones Bonus */
+.botones-bonus {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.btn-small {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-button);
+    position: relative;
+    overflow: hidden;
+    background: var(--btn-bonus);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-small::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
+    transform: translateX(-100%);
+}
+
+.btn-small:hover::after {
+    animation: slideShine 0.8s ease;
+}
+
+@keyframes slideShine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.btn-small:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(255, 107, 107, 0.5);
+}
+
+.btn-small:active {
+    transform: scale(0.95);
+}
+
+/* =====================================
+   INFORMACIÓN - DISEÑO MODERNO
+   ===================================== */
+
+.info {
+    padding: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, #00ff88, #8a2be2, #ff3366);
+}
+
+.info p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.info strong {
+    background: linear-gradient(135deg, #fff 0%, #a8edea 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* =====================================
+   EFECTOS ESPECIALES ADICIONALES
+   ===================================== */
+
+/* Efecto de confeti (se activará con JS) */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: #ff0;
+    top: -10px;
+    opacity: 0;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* Indicador de teclas */
+.key-hint {
+    margin-top: var(--spacing-md);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 1px;
+}
+
+.key-hint kbd {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 8px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0 3px;
+    font-family: monospace;
+}
+
+/* =====================================
+   RESPONSIVE
+   ===================================== */
+
+@media (max-width: 768px) {
+    .container {
+        padding: var(--spacing-lg);
+        margin: var(--spacing-md);
+    }
+    
+    .titulo {
+        font-size: 2rem;
+    }
+    
+    .numero {
+        font-size: 4.5rem;
+    }
+    
+    .botones {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .btn {
+        min-width: 100%;
+        padding: 18px 25px;
+    }
+    
+    .btn-small {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 1.8rem;
+    }
+    
+    .numero {
+        font-size: 3.5rem;
+    }
+    
+    .info {
+        padding: var(--spacing-md);
+    }
+    
+    .info p {
+        font-size: 1rem;
+    }
+}

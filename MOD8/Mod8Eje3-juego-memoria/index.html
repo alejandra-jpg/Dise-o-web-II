@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎮 Juego de Memoria Divertido</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>🎮 JUEGO DE MEMORIA DIVERTIDO 🎮</h1>
+
+  <div class="info">
+    <p>⏱️ Tiempo: <span id="timer">00:00</span></p>
+    <p>🔄 Movimientos: <span id="moves">0</span></p>
+    <p>⭐ Puntuación: <span id="score">0</span></p>
+    <button id="resetBtn">🎯 REINICIAR JUEGO</button>
+  </div>
+
+  <div id="gameBoard" class="board"></div>
+
+  <!-- VENTANA EMERGENTE DE VICTORIA -->
+  <div id="winModal" class="win-modal">
+    <div class="win-content">
+      <div class="celebration-emoji">🎉🥳🎊</div>
+      <h2 class="win-title">¡FELICIDADES!</h2>
+      <p class="win-subtitle">¡Has ganado el juego de memoria!</p>
+      
+      <div class="stars">★★★★★</div>
+      
+      <div class="win-stats">
+        <div class="stat-item">
+          <span class="stat-label">🔄 Movimientos</span>
+          <span class="stat-value" id="finalMoves">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">⏱️ Tiempo</span>
+          <span class="stat-value" id="finalTime">00:00</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">⭐ Puntuación</span>
+          <span class="stat-value" id="finalScore">0</span>
+        </div>
+      </div>
+      
+      <div class="win-buttons">
+        <button id="playAgainBtn" class="win-btn">🔄 JUGAR DE NUEVO</button>
+        <button id="closeModalBtn" class="win-btn">✖️ CERRAR</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
