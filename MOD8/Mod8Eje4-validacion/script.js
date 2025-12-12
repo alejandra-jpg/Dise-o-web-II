@@ -52,15 +52,6 @@ function validateField(field) {
             if (value.length === 0) {
                 message = 'La contraseña es obligatoria';
                 isValid = false;
-            } else if (value.length < 8) {
-                message = 'La contraseña debe tener al menos 8 caracteres';
-                isValid = false;
-            } else if (!/[A-Z]/.test(value)) {
-                message = 'Debe contener al menos una mayúscula';
-                isValid = false;
-            } else if (!/[0-9]/.test(value)) {
-                message = 'Debe contener al menos un número';
-                isValid = false;
             }
             // Actualizar requisitos visuales
             updatePasswordRequirements(value);
@@ -258,4 +249,5 @@ form.addEventListener('submit', (e) => {
             submitBtn.disabled = true;
         }, 3000);
     }
+
 });
