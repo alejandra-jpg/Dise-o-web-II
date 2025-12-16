@@ -5,184 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 5: Imágenes Responsive</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <header class="header">
-        <div class="header-content">
-            <h1><i class="fas fa-images"></i> Ejercicio 5: Imágenes Responsive</h1>
-            <p class="subtitle">Abre las herramientas de desarrollador (F12) y redimensiona la ventana para ver los cambios.</p>
-            <div class="device-indicator">
-                <span class="device-icon"><i class="fas fa-mobile-alt"></i> Móvil</span>
-                <span class="device-icon"><i class="fas fa-tablet-alt"></i> Tablet</span>
-                <span class="device-icon"><i class="fas fa-desktop"></i> Escritorio</span>
-            </div>
-        </div>
+    <header>
+        <h1>Ejercicio 5: Imágenes Responsive</h1>
+        <p>Abre las herramientas de desarrollador (F12) y redimensiona la ventana para ver los cambios.</p>
     </header>
 
     <main class="container">
 
-        <section class="section-card">
-            <div class="section-header">
-                <h2><span class="section-number">1</span> Srcset y Sizes (Misma imagen, distintos tamaños)</h2>
-                <div class="section-badge">Optimización</div>
-            </div>
-            <p class="section-description">El navegador elige la mejor imagen basándose en el ancho de pantalla y la densidad de píxeles (DPI).</p>
+        <section>
+            <h2>1. Srcset y Sizes (Misma imagen, distintos tamaños)</h2>
+            <p>El navegador elige la mejor imagen basándose en el ancho de pantalla y la densidad de píxeles (DPI).</p>
             
-            <div class="image-container">
-                <img 
-                    src="https://placehold.co/400x300/4A90E2/FFFFFF?text=Fallback+Img" 
-                    srcset="
-                        https://placehold.co/400x300/FF6B6B/FFFFFF?text=Small+400w 400w,
-                        https://placehold.co/800x600/4ECDC4/FFFFFF?text=Medium+800w 800w,
-                        https://placehold.co/1200x900/45B7D1/FFFFFF?text=Large+1200w 1200w
-                    "
-                    sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-                    alt="Ejemplo de srcset"
-                    loading="lazy"
-                    class="responsive-img img-with-border"
+            <img 
+                src="https://placehold.co/400x300?text=Fallback+Img" 
+                srcset="
+                    https://placehold.co/400x300?text=Small+400w 400w,
+                    https://placehold.co/800x600?text=Medium+800w 800w,
+                    https://placehold.co/1200x900?text=Large+1200w 1200w
+                "
+                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                alt="Ejemplo de srcset"
+                loading="lazy"
+                class="responsive-img"
+            >
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>2. Elemento Picture (Art Direction)</h2>
+            <p>Usamos una imagen vertical para móviles y una horizontal panorámica para escritorio.</p>
+            
+            <picture>
+                <source 
+                    media="(min-width: 1024px)" 
+                    srcset="https://placehold.co/1200x400/2ecc71/white?text=Desktop+Wide+(Art+Direction)"
                 >
-            </div>
-            <div class="info-box">
-                <h3><i class="fas fa-info-circle"></i> ¿Cómo funciona?</h3>
-                <p>El atributo <code>srcset</code> proporciona diferentes versiones de la misma imagen con distintos tamaños en píxeles. El atributo <code>sizes</code> define cómo se mostrará la imagen en diferentes breakpoints.</p>
-            </div>
+                <source 
+                    media="(min-width: 768px)" 
+                    srcset="https://placehold.co/800x500/3498db/white?text=Tablet+(Art+Direction)"
+                >
+                <img 
+                    src="https://placehold.co/400x400/e74c3c/white?text=Mobile+Square" 
+                    alt="Ejemplo de art direction"
+                    loading="lazy"
+                    class="responsive-img"
+                >
+            </picture>
         </section>
 
-        <hr class="divider">
+        <hr>
 
-        <section class="section-card">
-            <div class="section-header">
-                <h2><span class="section-number">2</span> Elemento Picture (Art Direction)</h2>
-                <div class="section-badge">Dirección de Arte</div>
-            </div>
-            <p class="section-description">Usamos una imagen vertical para móviles y una horizontal panorámica para escritorio.</p>
-            
-            <div class="image-container">
-                <picture>
-                    <source 
-                        media="(min-width: 1024px)" 
-                        srcset="https://placehold.co/1200x400/FF9F43/FFFFFF?text=Desktop+Wide+(Art+Direction)"
-                    >
-                    <source 
-                        media="(min-width: 768px)" 
-                        srcset="https://placehold.co/800x500/36C5F0/FFFFFF?text=Tablet+(Art+Direction)"
-                    >
-                    <img 
-                        src="https://placehold.co/400x400/96CEB4/FFFFFF?text=Mobile+Square" 
-                        alt="Ejemplo de art direction"
-                        loading="lazy"
-                        class="responsive-img img-with-shadow"
-                    >
-                </picture>
-            </div>
-            <div class="info-box">
-                <h3><i class="fas fa-info-circle"></i> ¿Cómo funciona?</h3>
-                <p>El elemento <code>&lt;picture&gt;</code> permite definir diferentes fuentes de imagen para diferentes contextos (art direction). El navegador selecciona la primera fuente que cumpla con las condiciones.</p>
-            </div>
-        </section>
-
-        <hr class="divider">
-
-        <section class="section-card">
-            <div class="section-header">
-                <h2><span class="section-number">3</span> Background Image Responsive (CSS)</h2>
-                <div class="section-badge">CSS Moderno</div>
-            </div>
-            <p class="section-description">La imagen de fondo de este div cambia según media queries en CSS.</p>
-            
+        <section>
+            <h2>3. Background Image Responsive (CSS)</h2>
+            <p>La imagen de fondo de este div cambia según media queries en CSS.</p>
             <div class="hero-background">
-                <div class="hero-content">
-                    <h3>Contenido sobre el fondo</h3>
-                    <p>Este texto es visible sobre la imagen de fondo que cambia según el tamaño de pantalla.</p>
-                    <div class="hero-buttons">
-                        <button class="btn-primary"><i class="fas fa-play"></i> Ver Demo</button>
-                        <button class="btn-secondary"><i class="fas fa-code"></i> Ver Código</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="info-box">
-                <h3><i class="fas fa-info-circle"></i> ¿Cómo funciona?</h3>
-                <p>Usamos media queries en CSS para cambiar la imagen de fondo según el ancho de la pantalla. Este enfoque es ideal para fondos hero o banners.</p>
-                <div class="breakpoints">
-                    <div class="breakpoint">
-                        <span class="bp-label">Móvil</span>
-                        <span class="bp-value">< 600px</span>
-                    </div>
-                    <div class="breakpoint">
-                        <span class="bp-label">Tablet</span>
-                        <span class="bp-value">600px - 1024px</span>
-                    </div>
-                    <div class="breakpoint">
-                        <span class="bp-label">Escritorio</span>
-                        <span class="bp-value">> 1024px</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="section-card">
-            <div class="section-header">
-                <h2><span class="section-number">4</span> Comparación de Técnicas</h2>
-                <div class="section-badge">Resumen</div>
-            </div>
-            
-            <div class="techniques-grid">
-                <div class="technique-card">
-                    <div class="technique-icon">
-                        <i class="fas fa-file-image"></i>
-                    </div>
-                    <h3>srcset + sizes</h3>
-                    <p>Ideal para optimizar carga de imágenes con diferentes resoluciones.</p>
-                    <ul class="technique-list">
-                        <li><i class="fas fa-check"></i> Optimiza según densidad de píxeles</li>
-                        <li><i class="fas fa-check"></i> El navegador decide la mejor imagen</li>
-                        <li><i class="fas fa-check"></i> Misma imagen, diferentes tamaños</li>
-                    </ul>
-                </div>
-                
-                <div class="technique-card">
-                    <div class="technique-icon">
-                        <i class="fas fa-crop-alt"></i>
-                    </div>
-                    <h3>Picture Element</h3>
-                    <p>Perfecto para dirección de arte (diferentes composiciones según dispositivo).</p>
-                    <ul class="technique-list">
-                        <li><i class="fas fa-check"></i> Diferentes recortes o composiciones</li>
-                        <li><i class="fas fa-check"></i> Ideal para cambiar orientación</li>
-                        <li><i class="fas fa-check"></i> Formatos modernos (WebP, AVIF)</li>
-                    </ul>
-                </div>
-                
-                <div class="technique-card">
-                    <div class="technique-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3>CSS Background</h3>
-                    <p>Mejor para fondos decorativos o imágenes que no son contenido principal.</p>
-                    <ul class="technique-list">
-                        <li><i class="fas fa-check"></i> Fácil de implementar con media queries</li>
-                        <li><i class="fas fa-check"></i> Control total con CSS</li>
-                        <li><i class="fas fa-check"></i> Ideal para banners y secciones hero</li>
-                    </ul>
-                </div>
+                <h3>Contenido sobre el fondo</h3>
             </div>
         </section>
 
     </main>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <p><i class="fas fa-flag-checkered"></i> Fin del Ejercicio de Imágenes Responsive</p>
-            <p class="footer-sub">Creado con HTML5, CSS3 y técnicas modernas de desarrollo web</p>
-            <div class="footer-icons">
-                <i class="fas fa-laptop-code"></i>
-                <i class="fas fa-mobile-alt"></i>
-                <i class="fas fa-tablet-alt"></i>
-            </div>
-        </div>
+    <footer>
+        <p>Fin del Ejercicio</p>
     </footer>
 
 </body>
