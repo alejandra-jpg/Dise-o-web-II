@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Encabezado -->
+        <header class="header">
+            <h1><i class="fas fa-store"></i> Mi Tienda Online</h1>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Catálogo de Productos -->
+            <section class="products-section">
+                <h2><i class="fas fa-boxes"></i> Productos Disponibles</h2>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Los productos se cargarán dinámicamente -->
+                </div>
+            </section>
+
+            <!-- Carrito de Compras -->
+            <aside class="cart-section">
+                <h2><i class="fas fa-shopping-basket"></i> Tu Carrito</h2>
+                
+                <div class="cart-items" id="cartItems">
+                    <p class="empty-cart">Tu carrito está vacío</p>
+                </div>
+
+                <div class="cart-summary" id="cartSummary" style="display: none;">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>IVA (16%):</span>
+                        <span id="tax">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Envío:</span>
+                        <span id="shipping">$50.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="total">$0.00</span>
+                    </div>
+                    
+                    <button class="btn-checkout" id="checkoutBtn">
+                        <i class="fas fa-credit-card"></i> Proceder al Pago
+                    </button>
+                    
+                    <button class="btn-clear" id="clearCartBtn">
+                        <i class="fas fa-trash-alt"></i> Vaciar Carrito
+                    </button>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Modal Simple de Confirmación de Pago -->
+    <div class="modal" id="confirmModal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content simple-modal">
+            <div class="modal-header-simple">
+                <i class="fas fa-check-circle success-icon-simple"></i>
+                <h2>¡Pedido Realizado!</h2>
+            </div>
+            
+            <div class="modal-body-simple">
+                <p class="success-message-text">Tu pedido ha sido procesado exitosamente.</p>
+                
+                <div class="payment-details">
+                    <div class="total-paid">
+                        <span class="total-label">Total pagado:</span>
+                        <span class="total-amount" id="orderTotal">$0.00</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer-simple">
+                <button class="btn-close-modal" onclick="closeModal()">
+                    <i class="fas fa-times"></i> Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmación para Vaciar Carrito -->
+    <div class="modal" id="clearCartModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content simple-modal cart-modal">
+            <div class="modal-header-simple" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                <i class="fas fa-trash-alt success-icon-simple"></i>
+                <h2>¿Vaciar Carrito?</h2>
+            </div>
+            
+            <div class="modal-body-simple">
+                <p class="success-message-text">¿Estás seguro que deseas vaciar tu carrito?</p>
+                <p class="warning-text"><i class="fas fa-exclamation-triangle"></i> Esta acción no se puede deshacer</p>
+            </div>
+            
+            <div class="modal-footer-simple">
+                <button class="btn-cancel" onclick="closeClearCartModal()">
+                    <i class="fas fa-times"></i> Cancelar
+                </button>
+                <button class="btn-confirm" onclick="confirmClearCart()">
+                    <i class="fas fa-trash-alt"></i> Sí, Vaciar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="javascript.js"></script>
+</body>
+</html>

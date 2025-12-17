@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulador de Lista Avanzado</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header-section">
+                <h1><i class="fas fa-tasks"></i> Manipulador de Lista </h1>
+                <p class="subtitle">Añade, edita y elimina items dinámicamente</p>
+            </div>
+            
+            <div class="input-section">
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="itemInput" 
+                        placeholder="Escribe un nuevo item..."
+                        autocomplete="off"
+                        autofocus
+                    >
+                    <button id="addBtn" class="btn btn-add">
+                        <i class="fas fa-plus"></i> Añadir
+                    </button>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <i class="fas fa-list-ol"></i>
+                    <span>Total: <strong id="itemCount">0</strong> items</span>
+                </div>
+            </div>
+
+            <div class="list-container">
+                <ul id="itemList" class="item-list">
+                    <!-- Los items se añadirán aquí dinámicamente -->
+                </ul>
+            </div>
+
+            <div class="actions">
+                <button id="clearAllBtn" class="btn btn-danger">
+                    <i class="fas fa-trash-alt"></i> Limpiar Todo
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmación -->
+    <div class="modal" id="confirmationModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-small">
+            <button class="modal-close">×</button>
+            <div class="modal-icon warning">!</div>
+            <h2 id="modalTitle">¿Confirmar Acción?</h2>
+            <p id="modalMessage">Esta acción no se puede deshacer. ¿Estás seguro?</p>
+            <div class="modal-actions">
+                <button class="btn btn-secondary cancel-btn">Cancelar</button>
+                <button class="btn btn-danger confirm-btn">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="javascript.js"></script>
+</body>
+</html>

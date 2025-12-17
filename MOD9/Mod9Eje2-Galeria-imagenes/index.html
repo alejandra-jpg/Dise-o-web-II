@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Interactiva - DOM</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-camera"></i> Mi Galería</h1>
+           
+        </header>
+
+        <!-- Controles -->
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 Buscar imágenes por título, descripción o categoría...">
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th-large"></i> Todas
+                </button>
+                <button class="filter-btn" data-filter="naturaleza">
+                    <i class="fas fa-mountain"></i> Naturaleza
+                </button>
+                <button class="filter-btn" data-filter="ciudad">
+                    <i class="fas fa-city"></i> Ciudad
+                </button>
+                <button class="filter-btn" data-filter="tecnologia">
+                    <i class="fas fa-laptop-code"></i> Tecnología
+                </button>
+                <button class="filter-btn" data-filter="personas">
+                    <i class="fas fa-users"></i> Personas
+                </button>
+                <!-- El botón de resetear se agregará con JavaScript -->
+            </div>
+
+            <div class="view-toggle">
+                <button class="view-btn active" data-view="grid">
+                    <i class="fas fa-th-large"></i> Vista Grid
+                </button>
+                <button class="view-btn" data-view="list">
+                    <i class="fas fa-list"></i> Vista Lista
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <span>Mostrando <strong id="imageCount">0</strong> imágenes</span>
+        
+        </div>
+
+        <!-- Galería -->
+        <div class="gallery" id="gallery">
+            <!-- Las imágenes se cargarán aquí con JavaScript -->
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox-close" title="Cerrar (Esc)">
+                <i class="fas fa-times"></i>
+            </button>
+            <button class="lightbox-prev" title="Anterior (←)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="lightbox-next" title="Siguiente (→)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="lightbox-content">
+                <img src="" alt="" id="lightboxImg">
+                <div class="lightbox-info">
+                    <h3 id="lightboxTitle"></h3>
+                    <p id="lightboxCategory"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="javascript.js"></script>
+</body>
+</html>
