@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador de APIs HTML5</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Explorador de APIs HTML5</h1>
+            <p>Demostraciones interactivas de APIs modernas</p>
+        </header>
+
+        <div class="apis-grid">
+            <!-- Geolocation API -->
+            <div class="api-card">
+                <h2>📍 Geolocation API</h2>
+                <p class="api-description">Obtén tu ubicación geográfica actual</p>
+                
+                <div class="demo-content">
+                    <button id="getLocation">Obtener Mi Ubicación</button>
+                    <div id="locationResult" class="result"></div>
+                </div>
+            </div>
+
+            <!-- Notification API -->
+            <div class="api-card">
+                <h2>🔔 Notification API</h2>
+                <p class="api-description">Muestra notificaciones del sistema</p>
+                
+                <div class="demo-content">
+                    <button id="requestNotification">Solicitar Permiso</button>
+                    <button id="showNotification" disabled>Mostrar Notificación</button>
+                    <div id="notificationResult" class="result"></div>
+                </div>
+            </div>
+
+            <!-- LocalStorage API -->
+            <div class="api-card">
+                <h2>💾 LocalStorage API</h2>
+                <p class="api-description">Almacena datos localmente en el navegador</p>
+                
+                <div class="demo-content">
+                    <input type="text" id="storageInput" placeholder="Escribe algo...">
+                    <div class="storage-buttons">
+                        <button id="saveStorage">Guardar</button>
+                        <button id="loadStorage">Cargar</button>
+                        <button id="clearStorage">Limpiar</button>
+                    </div>
+                    <div id="storageResult" class="result"></div>
+                </div>
+            </div>
+
+            <!-- Drag and Drop API -->
+            <div class="api-card">
+                <h2>🔄 Drag & Drop API</h2>
+                <p class="api-description">Arrastra y suelta elementos entre contenedores</p>
+                
+                <div class="demo-content">
+                    <div class="drop-zones">
+                        <div class="zone" id="zone1">
+                            <div class="draggable" draggable="true">Item 1</div>
+                            <div class="draggable" draggable="true">Item 2</div>
+                            <div class="draggable" draggable="true">Item 3</div>
+                        </div>
+                        <div class="zone" id="zone2">
+                            <p class="empty-message">Arrastra aquí</p>
+                        </div>
+                    </div>
+                    <div class="drop-info">
+                        <p>Arrastra los elementos de la izquierda a la derecha</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fetch API -->
+            <div class="api-card">
+                <h2>🌐 Fetch API</h2>
+                <p class="api-description">Realiza peticiones HTTP de forma asíncrona</p>
+                
+                <div class="demo-content">
+                    <p>Obtén datos de una API pública:</p>
+                    <div class="fetch-controls">
+                        <select id="apiSelector">
+                            <option value="users">Usuarios</option>
+                            <option value="posts">Posts</option>
+                            <option value="comments">Comentarios</option>
+                        </select>
+                        <button id="fetchData">Obtener Datos</button>
+                    </div>
+                    <div id="fetchResult" class="result"></div>
+                </div>
+            </div>
+
+            <!-- Canvas API (más pequeña) -->
+            <div class="api-card">
+                <h2>🎨 Canvas API</h2>
+                <p class="api-description">Dibujo dinámico y gráficos en tiempo real</p>
+                
+                <div class="demo-content canvas-demo">
+                    <canvas id="myCanvas" width="300" height="150"></canvas>
+                    <div class="canvas-controls">
+                        <button id="drawRect">Rectángulo</button>
+                        <button id="drawCircle">Círculo</button>
+                        <button id="clearCanvas">Limpiar</button>
+                        <input type="color" id="colorPicker" value="#FF6B6B" title="Seleccionar color">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Permiso de Geolocalización -->
+    <div id="geolocation-permission-modal" class="modal permission-modal">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="permission-request-card">
+                    <div class="permission-header">
+                        <div class="permission-icon large-icon">📍</div>
+                        <h3>Este archivo quiere<br><strong>Conocer tu ubicación</strong></h3>
+                    </div>
+                    
+                    <div class="permission-message">
+                        <p>Permitir que <strong>explorador-apis-html5.local</strong> acceda a tu ubicación?</p>
+                    </div>
+                    
+                    <div class="permission-details">
+                        <p>Tu ubicación será usada para:</p>
+                        <ul>
+                            <li>Mostrar tu posición en el mapa</li>
+                            <li>Proporcionar servicios basados en ubicación</li>
+                            <li>Mejorar la experiencia de usuario</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="permission-buttons">
+                        <button class="permission-btn block-btn" onclick="handlePermission('geolocation', 'denied')">
+                            Bloquear
+                        </button>
+                        <button class="permission-btn allow-once-btn" onclick="handlePermission('geolocation', 'once')">
+                            Solo esta vez
+                        </button>
+                        <button class="permission-btn allow-btn" onclick="handlePermission('geolocation', 'granted')">
+                            Permitir
+                        </button>
+                    </div>
+                    
+                    <div class="permission-footer">
+                        <p><small>Puedes cambiar esta configuración más tarde en la configuración del sitio</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Permiso de Notificaciones -->
+    <div id="notification-permission-modal" class="modal permission-modal">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="permission-request-card">
+                    <div class="permission-header">
+                        <div class="permission-icon large-icon">🔔</div>
+                        <h3>Este archivo quiere<br><strong>Enviarte notificaciones</strong></h3>
+                    </div>
+                    
+                    <div class="permission-message">
+                        <p>Permitir que <strong>explorador-apis-html5.local</strong> te envíe notificaciones?</p>
+                    </div>
+                    
+                    <div class="permission-details">
+                        <p>Las notificaciones serán usadas para:</p>
+                        <ul>
+                            <li>Mostrar alertas y recordatorios</li>
+                            <li>Informarte sobre actualizaciones</li>
+                            <li>Proporcionar contenido relevante</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="permission-buttons">
+                        <button class="permission-btn block-btn" onclick="handlePermission('notification', 'denied')">
+                            Bloquear
+                        </button>
+                        <button class="permission-btn allow-btn" onclick="handlePermission('notification', 'granted')">
+                            Permitir
+                        </button>
+                    </div>
+                    
+                    <div class="permission-footer">
+                        <p><small>Puedes cambiar esta configuración más tarde en la configuración del sitio</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay para modales -->
+    <div id="modal-overlay" class="modal-overlay"></div>
+
+    <script src="javascript.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería con File API</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-images"></i> Galería de Imágenes</h1>
+            <p class="subtitle">Carga y visualiza múltiples imágenes de forma rápida y sencilla</p>
+        </div>
+        
+        <div class="upload-area" id="uploadArea">
+            <input type="file" id="fileInput" accept="image/*" multiple hidden>
+            <div class="upload-content">
+                <div class="upload-icon">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <h3>Arrastra y suelta imágenes aquí</h3>
+                <p>O haz clic en el botón para seleccionar archivos</p>
+                <button class="btn-upload" id="browseBtn">
+                    <i class="fas fa-folder-open"></i> Seleccionar Archivos
+                </button>
+                <div class="upload-hint">
+                    <i class="fas fa-info-circle"></i> Formatos soportados: JPG, PNG, GIF, WebP, SVG
+                </div>
+            </div>
+        </div>
+
+        <div class="stats" id="stats" style="display: none;">
+            <div class="stat-item">
+                <i class="fas fa-image"></i>
+                <div>
+                    <span class="stat-label">Total imágenes</span>
+                    <span class="stat-value" id="totalImages">0</span>
+                </div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-weight-hanging"></i>
+                <div>
+                    <span class="stat-label">Tamaño total</span>
+                    <span class="stat-value" id="totalSize">0 KB</span>
+                </div>
+            </div>
+            <button class="btn-clear" id="clearAllBtn">
+                <i class="fas fa-trash-alt"></i> Limpiar Todo
+            </button>
+        </div>
+
+        <div class="gallery" id="gallery">
+            <div class="empty-state" id="emptyState">
+                <i class="fas fa-images"></i>
+                <h3>Tu galería está vacía</h3>
+                <p>¡Sube tus primeras imágenes!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para vista de imagen -->
+    <div class="modal" id="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="modalImage" src="" alt="">
+            <div class="modal-info" id="modalInfo"></div>
+            <div class="modal-actions">
+                <button class="btn-download" id="downloadBtn">
+                    <i class="fas fa-download"></i> Descargar
+                </button>
+                <button class="btn-delete-single" id="deleteSingleBtn">
+                    <i class="fas fa-trash"></i> Eliminar
+                </button>
+            </div>
+        </div>
+    </div>
+
+<!-- Modal de confirmación para eliminar imagen individual -->
+<div class="confirm-modal single-delete-modal" id="deleteSingleModal">
+    <div class="modal-overlay"></div>
+    <div class="confirm-content">
+        <div class="confirm-icon">
+            <i class="fas fa-trash-alt"></i>
+        </div>
+        <h2 class="confirm-title">Eliminar Imagen</h2>
+        
+        <div class="image-preview" id="deleteImagePreview">
+            <img src="" alt="" id="deletePreviewImage">
+            <div class="image-preview-info">
+                <h4 id="deleteImageName"></h4>
+                <div class="preview-stats">
+                    <span><i class="fas fa-weight-hanging"></i> <span id="deleteImageSize"></span></span>
+                    <span><i class="fas fa-calendar"></i> <span id="deleteImageDate"></span></span>
+                </div>
+            </div>
+        </div>
+        
+        <p class="confirm-message" id="deleteSingleMessage">
+            ¿Estás seguro de que quieres eliminar esta imagen?
+        </p>
+        
+        <div class="confirm-actions">
+            <button class="confirm-btn confirm-btn-cancel" id="deleteSingleCancel">
+                <i class="fas fa-times"></i> Cancelar
+            </button>
+            <button class="confirm-btn confirm-btn-accept" id="deleteSingleAccept">
+                <i class="fas fa-trash"></i> Eliminar
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de confirmación para eliminar todo -->
+<div class="confirm-modal bulk-delete-modal" id="confirmModal">
+    <div class="modal-overlay"></div>
+    <div class="confirm-content">
+        <div class="confirm-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <h2 class="confirm-title">¡Eliminar Todas las Imágenes!</h2>
+        <p class="confirm-message">
+            Estás a punto de eliminar <strong>todas las imágenes</strong> de la galería.<br>
+            Esta acción es irreversible.
+        </p>
+        
+        <div class="confirm-actions">
+            <button class="confirm-btn confirm-btn-cancel" id="confirmCancel">
+                <i class="fas fa-times"></i> Cancelar
+            </button>
+            <button class="confirm-btn confirm-btn-accept" id="confirmAccept">
+                <i class="fas fa-trash"></i> Eliminar Todo
+            </button>
+        </div>
+    </div>
+</div>
+
+    <script src="javascript.js"></script>
+</body>
+</html>
