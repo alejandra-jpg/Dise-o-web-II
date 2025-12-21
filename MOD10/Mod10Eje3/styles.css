@@ -1,0 +1,283 @@
+/* RESET BÁSICO: Elimina márgenes y paddings por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* CONTENEDOR PRINCIPAL: Grid de dos columnas */
+.container {
+    display: grid;
+    grid-template-columns: 280px 1fr; /* Lateral fijo, resto flexible */
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ESTILOS DEL PANEL DE FILTROS */
+.filters {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+    border: 2px solid #ff6b6b;
+}
+
+.filters h2 {
+    margin-bottom: 25px;
+    font-size: 1.4rem;
+    color: #ff6b6b;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #4ecdc4;
+}
+
+.filter-group {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    border-left: 4px solid #4ecdc4;
+}
+
+.filter-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #1a535c;
+}
+
+/* Estilos de inputs y select */
+input[type="text"], select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #4ecdc4;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    background: #f8f9fa;
+}
+
+input[type="text"]:focus, select:focus {
+    outline: none;
+    border-color: #ff6b6b;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+}
+
+/* Range input mejorado */
+input[type="range"] {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    background: linear-gradient(to right, #4ecdc4, #ff6b6b);
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    background: #ff6b6b;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.radio-options label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+    margin-bottom: 8px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+.radio-options label:hover {
+    background: rgba(78, 205, 196, 0.1);
+}
+
+.radio-options input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #ff6b6b;
+}
+
+/* ESTILOS DE LA GRILLA DE RESULTADOS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* TARJETA DE PRODUCTO */
+.card {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    padding: 0;
+    border-radius: 15px;
+    border: 2px solid #ffd166;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: #ff6b6b;
+}
+
+.card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 2px solid #4ecdc4;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h4 {
+    margin-bottom: 12px;
+    color: #1a535c;
+    font-size: 1.2rem;
+    min-height: 55px;
+}
+
+.card p {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.card strong {
+    color: #ff6b6b;
+}
+
+.card small {
+    color: #777;
+    font-size: 0.85rem;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding: 8px;
+    background: linear-gradient(to right, #ffd166, #ff9e6d);
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    width: fit-content;
+}
+
+/* PAGINACIÓN */
+.pagination {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-page, .btn-secondary {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.btn-page {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.btn-page:hover:not(:disabled) {
+    background: linear-gradient(135deg, #ff5252, #ff7b7b);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.btn-page:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #4ecdc4, #6ae2da);
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+    border: 2px solid #3db8af;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #3db8af, #5ad1c8);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(78, 205, 196, 0.3);
+}
+
+.results-header {
+    background: linear-gradient(135deg, #1a535c, #2a7c8c);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(26, 83, 92, 0.3);
+}
+
+#priceLabel {
+    color: #ff6b6b;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Mensaje cuando no hay resultados */
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    border-radius: 15px;
+    border: 2px dashed #ff6b6b;
+    color: #1a535c;
+    font-size: 1.2rem;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .filters {
+        position: static;
+        margin-bottom: 20px;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}

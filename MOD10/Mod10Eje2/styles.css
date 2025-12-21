@@ -1,0 +1,590 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.calculator-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.9rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input.valid {
+    border-color: #4caf50;
+}
+
+.form-group input.invalid {
+    border-color: #ff6b6b;
+}
+
+.error-message {
+    display: block;
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    min-height: 1.2rem;
+}
+
+.radio-group {
+    display: flex;
+    gap: 2rem;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.radio-label input {
+    width: auto;
+    transform: scale(1.2);
+}
+
+.btn-calculate {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-calculate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.result-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid #e0e0e0;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-section h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.imc-display {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.imc-value {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.imc-category {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.imc-bar {
+    position: relative;
+    height: 60px;
+    display: flex;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.bar-segment {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.bar-segment.bajo-peso {
+    background: #3498db;
+}
+
+.bar-segment.normal {
+    background: #2ecc71;
+}
+
+.bar-segment.sobrepeso {
+    background: #f39c12;
+}
+
+.bar-segment.obesidad {
+    background: #e74c3c;
+}
+
+.imc-indicator {
+    position: absolute;
+    top: -10px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid #333;
+    transform: translateX(-15px);
+    transition: left 0.5s ease;
+}
+
+.imc-ranges {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.imc-ranges h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.imc-ranges ul {
+    list-style: none;
+}
+
+.imc-ranges li {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    color: #666;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 0.8rem;
+}
+
+.dot.bajo-peso { background: #3498db; }
+.dot.normal { background: #2ecc71; }
+.dot.sobrepeso { background: #f39c12; }
+.dot.obesidad { background: #e74c3c; }
+
+.recommendations {
+    background: #e8f5e9;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #4caf50;
+}
+
+.recommendations h3 {
+    color: #2e7d32;
+    margin-bottom: 0.8rem;
+}
+
+.recommendations p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.history-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid #e0e0e0;
+}
+
+.history-section h2 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+#historyList {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.history-item {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.history-info {
+    flex: 1;
+}
+
+.history-imc {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.history-date {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.empty-history {
+    text-align: center;
+    color: #999;
+    padding: 2rem;
+}
+
+.btn-clear-history {
+    width: 100%;
+    padding: 0.8rem;
+    background: transparent;
+    color: #ff6b6b;
+    border: 2px solid #ff6b6b;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.3s;
+}
+
+.btn-clear-history:hover {
+    background: #ff6b6b;
+    color: white;
+}
+
+/* ==================== */
+/* ESTILOS DEL MODAL MEJORADO */
+/* ==================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeInOverlay 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInOverlay {
+    from { 
+        opacity: 0; 
+        backdrop-filter: blur(0);
+    }
+    to { 
+        opacity: 1; 
+        backdrop-filter: blur(5px);
+    }
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #ffffff, #f5f7ff);
+    border-radius: 24px;
+    padding: 0;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    animation: slideInModal 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+@keyframes slideInModal {
+    from { 
+        transform: translateY(-50px) scale(0.95); 
+        opacity: 0; 
+    }
+    to { 
+        transform: translateY(0) scale(1); 
+        opacity: 1; 
+    }
+}
+
+/* Encabezado del modal con gradiente */
+.modal-header {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+    padding: 2rem 2rem 1.5rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.3;
+    animation: float 20s linear infinite;
+}
+
+@keyframes float {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.modal-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    display: inline-block;
+    animation: shake 0.5s ease 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.modal-header h3 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
+}
+
+/* Cuerpo del modal */
+.modal-body {
+    padding: 2rem 2rem 1.5rem 2rem;
+}
+
+.modal-message {
+    color: #555;
+    text-align: center;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.modal-warning {
+    color: #ff6b6b;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: rgba(255, 107, 107, 0.08);
+    border-radius: 8px;
+    border-left: 3px solid #ff6b6b;
+}
+
+/* Pie del modal con botones */
+.modal-footer {
+    padding: 1.5rem 2rem 2rem 2rem;
+    background: #f9fafc;
+    border-top: 1px solid #eef1f7;
+    border-radius: 0 0 24px 24px;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.modal-btn {
+    padding: 0.9rem 2.2rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-width: 140px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s;
+}
+
+.modal-btn:hover::before {
+    left: 100%;
+}
+
+.modal-btn-cancel {
+    background: linear-gradient(135deg, #f1f3f9, #e8ecf4);
+    color: #555;
+    border: 2px solid #dfe4f0;
+}
+
+.modal-btn-cancel:hover {
+    background: linear-gradient(135deg, #e8ecf4, #dfe4f0);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.modal-btn-delete {
+    background: linear-gradient(135deg, #ff6b6b, #ff5252);
+    color: white;
+    border: 2px solid #ff6b6b;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.modal-btn-delete:hover {
+    background: linear-gradient(135deg, #ff5252, #ff3838);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+}
+
+/* Iconos dentro de los botones */
+.btn-icon {
+    font-size: 1.2rem;
+}
+
+/* Efecto de cierre del modal */
+.modal-content.closing {
+    animation: slideOutModal 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideOutModal {
+    from { 
+        transform: translateY(0) scale(1); 
+        opacity: 1; 
+    }
+    to { 
+        transform: translateY(50px) scale(0.95); 
+        opacity: 0; 
+    }
+}
+
+@media (max-width: 600px) {
+    .calculator-card {
+        padding: 1.5rem;
+    }
+    
+    .imc-value {
+        font-size: 3rem;
+    }
+    
+    .bar-segment {
+        font-size: 0.75rem;
+    }
+    
+    .modal-content {
+        padding: 0;
+        margin: 1rem;
+        width: 95%;
+    }
+    
+    .modal-header {
+        padding: 1.5rem 1.5rem 1rem 1.5rem;
+    }
+    
+    .modal-body {
+        padding: 1.5rem 1.5rem 1rem 1.5rem;
+    }
+    
+    .modal-footer {
+        padding: 1.5rem;
+    }
+    
+    .modal-buttons {
+        flex-direction: column;
+    }
+    
+    .modal-btn {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .modal-icon {
+        font-size: 2.8rem;
+    }
+    
+    .modal-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .modal-message {
+        font-size: 1rem;
+    }
+}
