@@ -168,21 +168,24 @@ input[type="text"]:focus, select:focus {
 }
 
 /* ========================= */
-/* CANVAS */
+/* CANVAS (MÁS PEQUEÑO) */
 /* ========================= */
-#myCanvas {
-    width: 100% !important;
-    height: 200px !important;
-    border: 2px solid #4ECDC4;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    background: #F7FFF7;
-    display: block;
+.canvas-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
-.canvas-card {
-    grid-column: 1 / -1;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 217, 61, 0.05));
+#myCanvas {
+    width: 100% !important;
+    max-width: 300px;
+    height: 150px !important;
+    border: 2px solid #4ECDC4;
+    border-radius: 10px;
+    background: #F7FFF7;
+    display: block;
+    margin: 0 auto;
 }
 
 .canvas-controls {
@@ -190,13 +193,26 @@ input[type="text"]:focus, select:focus {
     gap: 0.5rem;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
 }
 
 .canvas-controls button {
     background: linear-gradient(135deg, #4ECDC4 0%, #6BC5BA 100%);
     color: white;
     flex: 1;
-    min-width: 100px;
+    min-width: 80px;
+    padding: 0.7rem 0.5rem;
+    font-size: 0.85rem;
+}
+
+.canvas-controls input[type="color"] {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border-radius: 8px;
+    border: 2px solid #FF6B6B;
+    cursor: pointer;
+    margin: 0;
 }
 
 /* ========================= */
@@ -515,10 +531,6 @@ input[type="text"]:focus, select:focus {
         gap: 1.5rem;
     }
     
-    .canvas-card {
-        grid-column: 1;
-    }
-    
     .drop-zones {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -526,6 +538,11 @@ input[type="text"]:focus, select:focus {
     
     .zone {
         min-height: 120px;
+    }
+    
+    #myCanvas {
+        max-width: 250px;
+        height: 130px;
     }
     
     .modal-content {
@@ -547,6 +564,21 @@ input[type="text"]:focus, select:focus {
     
     .fetch-controls select {
         min-width: 100%;
+    }
+    
+    .canvas-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .canvas-controls button {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .canvas-controls input[type="color"] {
+        width: 60px;
+        height: 60px;
     }
 }
 
@@ -577,16 +609,18 @@ input[type="text"]:focus, select:focus {
         margin: 0.2rem;
     }
     
-    .canvas-controls {
-        flex-direction: column;
-    }
-    
-    .canvas-controls button {
-        width: 100%;
+    #myCanvas {
+        max-width: 220px;
+        height: 120px;
     }
     
     .draggable {
         padding: 0.7rem;
         font-size: 0.9rem;
+    }
+    
+    .canvas-controls button {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
     }
 }
