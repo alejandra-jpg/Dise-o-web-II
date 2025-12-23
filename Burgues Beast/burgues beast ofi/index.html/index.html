@@ -1,0 +1,2539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Las mejores hamburguesas de Bolivia">
+    <meta name="theme-color" content="#FF6B35">
+    
+    <title>BURGUES BEAST</title>
+    
+    <!-- Preconnect para fuentes externas -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts para títulos llamativos -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@700&family=Poppins:wght@800;900&display=swap" rel="stylesheet">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Preload imagen hero -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80">
+</head>
+
+<body>
+    <!-- Skip link para accesibilidad -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Header -->
+    <header role="banner">
+        <div class="header-container">
+            <div class="logo" role="img" aria-label="Burgues Beast - El Sabor que Domina">
+                <i class="fas fa-hamburger logo-icon" aria-hidden="true"></i>
+                <div class="logo-text">
+                    <h1 class="logo-main">BURGUES</h1>
+                    <h1 class="logo-beast">BEAST</h1>
+                </div>
+                <div class="logo-tagline"></div>
+            </div>
+            
+            <!-- Menú hamburguesa para mobile -->
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <!-- Navegación principal -->
+            <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+                <ul class="nav-list">
+                    <li><a href="#catalogo" class="nav-link"><i class="fas fa-fire"></i> Catálogo</a></li>
+                    <li><a href="#combos" class="nav-link"><i class="fas fa-crown"></i> Combos</a></li>
+                    <li><a href="#acompanamientos" class="nav-link"><i class="fas fa-star"></i> Acompañamientos</a></li>
+                    <li><a href="#bebidas" class="nav-link"><i class="fas fa-bolt"></i> Bebidas</a></li>
+                    <li><a href="#contacto" class="nav-link"><i class="fas fa-clock"></i> Horarios y Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main id="main-content" role="main">
+
+        <!-- Hero Section -->
+        <section class="hero" id="inicio" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h1 id="hero-title" class="hero-title">¡Las Mejores Hamburguesas <span class="hero-highlight">de Bolivia!</span></h1>
+                <p class="hero-subtitle">Carne 100% premium, ingredientes frescos y sabores que explotan en tu boca.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-check-circle"></i>
+                        <span>+5000 Pedidos</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-star"></i>
+                        <span>4.9/5 Rating</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-bolt"></i>
+                        <span>15-25 Min</span>
+                    </div>
+                </div>
+            </div>
+            
+           
+            
+            <!-- Indicador de scroll -->
+            <div class="scroll-indicator" aria-hidden="true">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+         <!-- BUSCADOR -->
+            <section class="search-section">
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input 
+                            type="text" 
+                            id="search-input" 
+                            placeholder="Buscar hamburguesas, acompañamientos, bebidas, combos..." 
+                            aria-label="Buscar productos"
+                        >
+                        <button id="search-button" class="btn">
+                            <i class="fas fa-search"></i> Buscar
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FILTRO POR PRESUPUESTO -->
+            <section class="budget-section">
+                <div class="budget-filter-container">
+                    <div class="budget-filter-box">
+                        <h3><i class="fas fa-wallet"></i> ¿Cuánto quieres gastar?</h3>
+                        <div class="budget-slider">
+                            <input 
+                                type="range" 
+                                id="budget-range" 
+                                min="50" 
+                                max="300" 
+                                step="5" 
+                                value="150"
+                                aria-label="Seleccionar presupuesto máximo"
+                            >
+                            <div class="budget-range-values">
+                                <span>Bs. 50</span>
+                                <span id="budget-value">Bs. 150</span>
+                                <span>Bs. 300</span>
+                            </div>
+                        </div>
+                        <button id="filter-by-budget" class="btn">
+                            <i class="fas fa-filter"></i> Mostrar productos dentro de mi presupuesto
+                        </button>
+                        <p><i class="fas fa-lightbulb"></i> Encontrarás los mejores productos según lo que quieras gastar</p>
+                    </div>
+                </div>
+            </section>
+
+        <!-- Catálogo Principal -->
+        <section class="catalogo" id="catalogo" aria-labelledby="catalogo-title">
+            <div class="section-header">
+                <h2 id="catalogo-title" class="section-title">Nuestro Catálogo</h2>
+                <p class="section-subtitle">Deliciosas hamburguesas artesanales hechas con los mejores ingredientes</p>
+            </div>
+            
+            <!-- Filtros de Categoría -->
+            <div class="categoria-filtros" role="tablist" aria-label="Filtrar hamburguesas por categoría">
+                <button class="categoria-btn active" data-categoria="todas" role="tab" aria-selected="true">
+                    <i class="fas fa-star"></i> Todas
+                </button>
+                <button class="categoria-btn" data-categoria="clasicas" role="tab" aria-selected="false">
+                    <i class="fas fa-crown"></i> Clásicas
+                </button>
+                <button class="categoria-btn" data-categoria="especiales" role="tab" aria-selected="false">
+                    <i class="fas fa-fire"></i> Especiales
+                </button>
+                <button class="categoria-btn" data-categoria="vegetarianas" role="tab" aria-selected="false">
+                    <i class="fas fa-leaf"></i> Vegetarianas
+                </button>
+                <button class="categoria-btn" data-categoria="gourmet" role="tab" aria-selected="false">
+                    <i class="fas fa-gem"></i> Gourmet
+                </button>
+            </div>
+
+            <!-- Grid de hamburguesas -->
+            <div class="container" id="hamburguesas-container">
+                <!-- Hamburguesa Ranch -->
+                <article class="card" id="ranch-burger" data-categoria="clasicas">
+                    <div class="card-badge" aria-label="Hamburguesa estilo ranch">Ranch Style</div>
+                    <div class="card-img">
+                        <img src="../imagenes/Ranch_Burger.jpg" 
+                            alt="Hamburguesa Ranch con salsa ranch y vegetales frescos"
+                            loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            <span class="card-title-text">Ranch Burger</span>
+                            <i class="fas fa-hat-cowboy"></i>
+                        </h3>
+                        <div class="card-price-section">
+                            <div class="card-price">
+                                <div class="price">Bs. 89</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn order-btn-card" data-product="ranch-burger">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="ranch-burger">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+               <!-- Hamburguesa Mediterránea -->
+<article class="card" id="mediterranean-burger" data-categoria="gourmet">
+    <div class="card-badge" aria-label="Hamburguesa mediterránea">Mediterránea</div>
+    <div class="card-img">
+        <img src="../imagenes/hamburguesa_mediterranea.avif" 
+             alt="Hamburguesa mediterranea y vegetales frescos"
+             loading="lazy">
+    </div>
+    <div class="card-content">
+        <h3 class="card-title">
+            <span class="card-title-text">Mediterranea</span>
+            <i class="fas fa-mushroom"></i>
+        </h3>
+        <div class="card-price-section">
+            <div class="card-price">
+                <div class="price">Bs. 115</div>
+            </div>
+            <div class="card-actions">
+                <button class="btn order-btn-card" data-product="mediterranean-burger">
+                    <i class="fas fa-cart-plus"></i> Ordenar
+                </button>
+                <button class="btn btn-details" data-product-detail="mediterranean-burger">
+                    <i class="fas fa-info-circle"></i> Detalles
+                </button>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- Hamburguesa con Champiñones -->
+<article class="card" id="mushroom-burger" data-categoria="clasicas">
+    <div class="card-badge" aria-label="Hamburguesa con champiñones">Champiñones</div>
+    <div class="card-img">
+        <img src="../imagenes/hamburguesa_con_champiñones.png" 
+             alt="Hamburguesa con champiñones salteados y queso suizo"
+             loading="lazy">
+    </div>
+    <div class="card-content">
+        <h3 class="card-title">
+            <span class="card-title-text">Mushroom Swiss</span>
+            <i class="fas fa-mushroom"></i>
+        </h3>
+        <div class="card-price-section">
+            <div class="card-price">
+                <div class="price">Bs. 98</div>
+            </div>
+            <div class="card-actions">
+                <button class="btn order-btn-card" data-product="mushroom-burger">
+                    <i class="fas fa-cart-plus"></i> Ordenar
+                </button>
+                <button class="btn btn-details" data-product-detail="mushroom-burger">
+                    <i class="fas fa-info-circle"></i> Detalles
+                </button>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- Hamburguesa Argentina -->
+<article class="card" id="argentinian-burger" data-categoria="especiales">
+    <div class="card-badge" aria-label="Hamburguesa estilo argentino">Argentina</div>
+    <div class="card-img">
+        <img src="../imagenes/hamburguesa_argentina.png" 
+             alt="Hamburguesa Argentina con chimichurri y provoleta"
+             loading="lazy">
+    </div>
+    <div class="card-content">
+        <h3 class="card-title">
+            <span class="card-title-text">Argentinian</span>
+            <i class="fas fa-flag"></i>
+        </h3>
+        <div class="card-price-section">
+            <div class="card-price">
+                <div class="price">Bs. 110</div>
+            </div>
+            <div class="card-actions">
+                <button class="btn order-btn-card" data-product="argentinian-burger">
+                    <i class="fas fa-cart-plus"></i> Ordenar
+                </button>
+                <button class="btn btn-details" data-product-detail="argentinian-burger">
+                    <i class="fas fa-info-circle"></i> Detalles
+                </button>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- Hamburguesa de Lentejas -->
+<article class="card" id="lentil-burger" data-categoria="vegetarianas">
+    <div class="card-badge" aria-label="Hamburguesa de lentejas">Lentejas</div>
+    <div class="card-img">
+        <img src="../imagenes/hamburguesa_de_lenteja.png" 
+             alt="Hamburguesa de lentejas con especias mediterráneas"
+             loading="lazy">
+    </div>
+    <div class="card-content">
+        <h3 class="card-title">
+            <span class="card-title-text">Lentil Power</span>
+            <i class="fas fa-leaf"></i>
+        </h3>
+        <div class="card-price-section">
+            <div class="card-price">
+                <div class="price">Bs. 85</div>
+            </div>
+            <div class="card-actions">
+                                <button class="btn order-btn-card" data-product="lentil-burger">
+                    <i class="fas fa-cart-plus"></i> Ordenar
+                </button>
+                <button class="btn btn-details" data-product-detail="lentil-burger">
+                    <i class="fas fa-info-circle"></i> Detalles
+                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Hamburguesa Buffalo -->
+                <article class="card" id="buffalo-burger" data-categoria="especiales">
+                    <div class="card-badge" aria-label="Hamburguesa buffalo">Buffalo Style</div>
+                    <div class="card-img">
+                        <img src="../imagenes/hamburguesa_de_buffalo.png" 
+                             alt="Hamburguesa Buffalo con salsa picante y aderezo ranch"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            <span class="card-title-text">Buffalo Chicken</span>
+                            <i class="fas fa-fire-alt"></i>
+                        </h3>
+                        <div class="card-price-section">
+                            <div class="card-price">
+                                <div class="price">Bs. 104</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn order-btn-card" data-product="buffalo-burger">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="buffalo-burger">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Hamburguesa de Pavo -->
+                <article class="card" id="turkey-burger" data-categoria="clasicas">
+                    <div class="card-badge" aria-label="Hamburguesa de pavo">Pavo</div>
+                    <div class="card-img">
+                        <img src="../imagenes/hamburguesa_de_pavo.png" 
+                             alt="Hamburguesa de pavo con arándanos y queso de cabra"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            <span class="card-title-text">Turkey Delight</span>
+                            <i class="fas fa-drumstick-bite"></i>
+                        </h3>
+                        <div class="card-price-section">
+                            <div class="card-price">
+                                <div class="price">Bs. 94</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn order-btn-card" data-product="turkey-burger">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="turkey-burger">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Hamburguesa Asiática -->
+                <article class="card" id="asian-burger" data-categoria="especiales">
+                    <div class="card-badge" aria-label="Hamburguesa estilo asiático">Asiática</div>
+                    <div class="card-img">
+                        <img src="../imagenes/hamburguesa_asiatica.jpg" 
+                             alt="Hamburguesa Asiática con jengibre y salsa teriyaki"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            <span class="card-title-text">Asian Fusion</span>
+                            <i class="fas fa-utensils"></i>
+                        </h3>
+                        <div class="card-price-section">
+                            <div class="card-price">
+                                <div class="price">Bs. 112</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn order-btn-card" data-product="asian-burger">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="asian-burger">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Hamburguesa de Bisonte -->
+                <article class="card" id="bison-burger" data-categoria="gourmet">
+                    <div class="card-badge" aria-label="Hamburguesa de bisonte">Bisonte</div>
+                    <div class="card-img">
+                        <img src="../imagenes/hamburguesa_bisonte.png" 
+                             alt="Hamburguesa de bisonte con salsa de arándanos"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            <span class="card-title-text">Bison Burger</span>
+                            <i class="fas fa-paw"></i>
+                        </h3>
+                        <div class="card-price-section">
+                            <div class="card-price">
+                                <div class="price">Bs. 165</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn order-btn-card" data-product="bison-burger">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="bison-burger">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Hamburguesa Mexicana Picante -->
+                <article class="card" id="mexican-fire" data-categoria="especiales">
+                    <div class="card-badge" aria-label="Hamburguesa mexicana picante">Mexicana Picante</div>
+                    <div class="card-img">
+                        <img src="../imagenes/hamburguesa_mexicana_picante.png" 
+                             alt="Hamburguesa Mexicana Picante con jalapeños y salsa habanero"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            <span class="card-title-text">Mexican Fire</span>
+                            <i class="fas fa-pepper-hot"></i>
+                        </h3>
+                        <div class="card-price-section">
+                            <div class="card-price">
+                                <div class="price">Bs. 107</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn order-btn-card" data-product="mexican-fire">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="mexican-fire">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Hamburguesa de Garbanzos -->
+                <article class="card" id="chickpea-burger" data-categoria="vegetarianas">
+                    <div class="card-badge" aria-label="Hamburguesa de garbanzos">Garbanzos</div>
+                    <div class="card-img">
+                        <img src="../imagenes/hamburguesa_de_garbanzo.jpg" 
+                             alt="Hamburguesa de garbanzos con especias orientales"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            <span class="card-title-text">Chickpea Burger</span>
+                            <i class="fas fa-seedling"></i>
+                        </h3>
+                        <div class="card-price-section">
+                            <div class="card-price">
+                                <div class="price">Bs. 87</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn order-btn-card" data-product="chickpea-burger">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="chickpea-burger">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Hamburguesa con Queso Azul -->
+                <article class="card" id="blue-cheese-burger" data-categoria="gourmet">
+                    <div class="card-badge" aria-label="Hamburguesa con queso azul">Queso Azul</div>
+                    <div class="card-img">
+                        <img src="../imagenes/hamburguesa_con_queso_azul.png" 
+                             alt="Hamburguesa con queso azul y cebolla caramelizada"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            <span class="card-title-text">Blue Cheese</span>
+                            <i class="fas fa-cheese"></i>
+                        </h3>
+                        <div class="card-price-section">
+                            <div class="card-price">
+                                <div class="price">Bs. 125</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn order-btn-card" data-product="blue-cheese-burger">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="blue-cheese-burger">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Hamburguesa de Cordero -->
+                <article class="card" id="lamb-burger" data-categoria="gourmet">
+                    <div class="card-badge" aria-label="Hamburguesa de cordero">Cordero</div>
+                    <div class="card-img">
+                        <img src="../imagenes/hamburguesa_de_cordero.png" 
+                             alt="Hamburguesa de cordero con menta y yogur"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            <span class="card-title-text">Lamb Supreme</span>
+                            <i class="fas fa-lamb"></i>
+                        </h3>
+                        <div class="card-price-section">
+                            <div class="card-price">
+                                <div class="price">Bs. 140</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn order-btn-card" data-product="lamb-burger">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="lamb-burger">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Hamburguesa de Atún -->
+                <article class="card" id="tuna-burger" data-categoria="especiales">
+                    <div class="card-badge" aria-label="Hamburguesa de atún">Atún</div>
+                    <div class="card-img">
+                        <img src="../imagenes/hamburguesa_de_atun.png" 
+                             alt="Hamburguesa de atún con wasabi y jengibre"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            <span class="card-title-text">Tuna Burger</span>
+                            <i class="fas fa-fish"></i>
+                        </h3>
+                        <div class="card-price-section">
+                            <div class="card-price">
+                                <div class="price">Bs. 118</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn order-btn-card" data-product="tuna-burger">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="tuna-burger">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Hamburguesa Italiana -->
+                <article class="card" id="italian-burger" data-categoria="clasicas">
+                    <div class="card-badge" aria-label="Hamburguesa estilo italiano">Italiana</div>
+                    <div class="card-img">
+                        <img src="../imagenes/hamburguesa_italiana.png" 
+                             alt="Hamburguesa Italiana con pesto y mozzarella"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            <span class="card-title-text">Italian Style</span>
+                            <i class="fas fa-pizza-slice"></i>
+                        </h3>
+                        <div class="card-price-section">
+                            <div class="card-price">
+                                <div class="price">Bs. 105</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn order-btn-card" data-product="italian-burger">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="italian-burger">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Hamburguesa de Soja -->
+                <article class="card" id="soy-burger" data-categoria="vegetarianas">
+                    <div class="card-badge" aria-label="Hamburguesa de soja">Soja</div>
+                    <div class="card-img">
+                        <img src="../imagenes/hamburguesa_de_soja.png" 
+                             alt="Hamburguesa de soja con vegetales asiáticos"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            <span class="card-title-text">Soy Burger</span>
+                            <i class="fas fa-leaf"></i>
+                        </h3>
+                        <div class="card-price-section">
+                            <div class="card-price">
+                                <div class="price">Bs. 82</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn order-btn-card" data-product="soy-burger">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="soy-burger">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Hamburguesa Tex-Mex -->
+                <article class="card" id="texmex-burger" data-categoria="especiales">
+                    <div class="card-badge" aria-label="Hamburguesa tex-mex">Tex-Mex</div>
+                    <div class="card-img">
+                        <img src="../imagenes/hamburguesa_tex_mex.png" 
+                             alt="Hamburguesa Tex-Mex con frijoles y nachos"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            <span class="card-title-text">Tex-Mex Burger</span>
+                            <i class="fas fa-hat-cowboy"></i>
+                        </h3>
+                        <div class="card-price-section">
+                            <div class="card-price">
+                                <div class="price">Bs. 113</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn order-btn-card" data-product="texmex-burger">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="texmex-burger">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Hamburguesa Griega -->
+                <article class="card" id="greek-burger" data-categoria="especiales">
+                    <div class="card-badge" aria-label="Hamburguesa estilo griego">Griega</div>
+                    <div class="card-img">
+                        <img src="../imagenes/hamburguesa_griega.png" 
+                             alt="Hamburguesa Griega con queso feta y aceitunas"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            <span class="card-title-text">Greek Burger</span>
+                            <i class="fas fa-leaf"></i>
+                        </h3>
+                        <div class="card-price-section">
+                            <div class="card-price">
+                                <div class="price">Bs. 109</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn order-btn-card" data-product="greek-burger">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="greek-burger">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Hamburguesa de Camarón -->
+                <article class="card" id="shrimp-burger" data-categoria="gourmet">
+                    <div class="card-badge" aria-label="Hamburguesa de camarón">Camarón</div>
+                    <div class="card-img">
+                        <img src="../imagenes/hamburguesa_de_camaron.png" 
+                             alt="Hamburguesa de camarón con salsa de ajo"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            <span class="card-title-text">Shrimp Burger</span>
+                            <i class="fas fa-shrimp"></i>
+                        </h3>
+                        <div class="card-price-section">
+                            <div class="card-price">
+                                <div class="price">Bs. 135</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn order-btn-card" data-product="shrimp-burger">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="shrimp-burger">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Hamburguesa de Tofu -->
+                <article class="card" id="tofu-burger" data-categoria="vegetarianas">
+                    <div class="card-badge" aria-label="Hamburguesa de tofu">Tofu</div>
+                    <div class="card-img">
+                        <img src="../imagenes/hamburguesa_tofu.png" 
+                             alt="Hamburguesa de tofu marinado con salsa teriyaki"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            <span class="card-title-text">Tofu Delight</span>
+                            <i class="fas fa-leaf"></i>
+                        </h3>
+                        <div class="card-price-section">
+                            <div class="card-price">
+                                <div class="price">Bs. 84</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn order-btn-card" data-product="tofu-burger">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="tofu-burger">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Hamburguesa Americana Clásica -->
+                <article class="card" id="all-american" data-categoria="clasicas">
+                    <div class="card-badge" aria-label="Hamburguesa americana clásica">Americana</div>
+                    <div class="card-img">
+                        <img src="../imagenes/hamburguesa_americana.png" 
+                             alt="Hamburguesa Americana Clásica con todos los ingredientes tradicionales"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            <span class="card-title-text">All American</span>
+                            <i class="fas fa-flag-usa"></i>
+                        </h3>
+                        <div class="card-price-section">
+                            <div class="card-price">
+                                <div class="price">Bs. 91</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn order-btn-card" data-product="all-american">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="all-american">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección Combos -->
+        <section class="combos" id="combos">
+            <div class="section-header">
+                <h2 class="section-title">Combos Especiales</h2>
+                <p class="section-subtitle">¡Ahorra con nuestros combos exclusivos!</p>
+            </div>
+            
+            <!-- Información de ahorro -->
+            <div class="combo-stats">
+                <div class="stat-card">
+                    <i class="fas fa-percentage"></i>
+                    <h3>Hasta 25% OFF</h3>
+                    <p>Descuento en combos</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>+500 Completados</h3>
+                    <p>Clientes satisfechos</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Listo en 15 min</h3>
+                    <p>Preparación rápida</p>
+                </div>
+            </div>
+            
+            <div class="combos-container">
+                
+                <!-- Combo Individual -->
+                <article class="combo-card" id="combo-individual">
+                    <div class="combo-badge">
+                        <span class="combo-tag">Más Popular</span>
+                        <span class="combo-savings-badge">-15%</span>
+                    </div>
+                    <div class="combo-img">
+                        <div class="card-img">
+                            <img 
+                                src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                alt="Combo Individual con hamburguesa, papas y refresco"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="combo-overlay">
+                            <span><i class="fas fa-user"></i> 1 Persona</span>
+                            <span><i class="fas fa-clock"></i> 15 min</span>
+                        </div>
+                    </div>
+                    <div class="combo-content">
+                        <div class="combo-header-info">
+                            <h3 class="combo-title">
+                                <i class="fas fa-user"></i> Combo Individual
+                            </h3>
+                            <div class="combo-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>4.5</span>
+                            </div>
+                        </div>
+                        
+                        <div class="combo-price-section">
+                            <div class="price-info">
+                                <div class="combo-price">Bs. 110</div>
+                                <div class="combo-old-price">Bs. 117</div>
+                            </div>
+                            <div class="combo-savings">
+                                <i class="fas fa-piggy-bank"></i>
+                                <span>Ahorras <strong>Bs. 7</strong></span>
+                            </div>
+                        </div>
+                        
+                        <div class="combo-actions">
+                            <button class="combo-btn add-to-cart" data-product="combo-individual">
+                                <i class="fas fa-shopping-cart"></i> Ordenar Combo
+                            </button>
+                            <button class="combo-details-btn" data-product-detail="combo-individual">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Combo Familiar -->
+                <article class="combo-card featured" id="combo-familiar">
+                    <div class="combo-badge">
+                        <span class="combo-tag featured-tag">¡Mejor Oferta!</span>
+                        <span class="combo-savings-badge featured-savings">-25%</span>
+                    </div>
+                    <div class="combo-img">
+                        <div class="card-img">
+                            <img 
+                                src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                alt="Combo Familiar para 3 personas"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="combo-overlay">
+                            <span><i class="fas fa-users"></i> 3-4 Personas</span>
+                            <span><i class="fas fa-clock"></i> 20 min</span>
+                        </div>
+                    </div>
+                    <div class="combo-content">
+                        <div class="combo-header-info">
+                            <h3 class="combo-title">
+                                <i class="fas fa-users"></i> Combo Familiar
+                            </h3>
+                            <div class="combo-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>5.0</span>
+                            </div>
+                        </div>
+                        
+                        <div class="combo-price-section">
+                            <div class="price-info">
+                                <div class="combo-price">Bs. 280</div>
+                                <div class="combo-old-price">Bs. 325</div>
+                            </div>
+                            <div class="combo-savings featured-savings-text">
+                                <i class="fas fa-piggy-bank"></i>
+                                <span>Ahorras <strong>Bs. 45</strong> (máximo ahorro)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="combo-actions">
+                            <button class="combo-btn featured-btn add-to-cart" data-product="combo-familiar">
+                                <i class="fas fa-crown"></i> Ordenar Ahora
+                            </button>
+                            <button class="combo-details-btn" data-product-detail="combo-familiar">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Combo Picante -->
+                <article class="combo-card spicy" id="combo-inferno">
+                    <div class="combo-badge">
+                        <span class="combo-tag spicy-tag">¡Picante!</span>
+                        <span class="combo-savings-badge spicy-savings">-12%</span>
+                    </div>
+                    <div class="combo-img">
+                        <div class="card-img">
+                            <img 
+                                src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                alt="Combo Picante para amantes del picante"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="combo-overlay">
+                            <span><i class="fas fa-fire"></i> Nivel Alto</span>
+                            <span><i class="fas fa-clock"></i> 18 min</span>
+                        </div>
+                    </div>
+                    <div class="combo-content">
+                        <div class="combo-header-info">
+                            <h3 class="combo-title">
+                                <i class="fas fa-fire"></i> Combo Inferno
+                            </h3>
+                            <div class="combo-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        
+                        <div class="combo-price-section">
+                            <div class="price-info">
+                                <div class="combo-price">Bs. 160</div>
+                                <div class="combo-old-price">Bs. 180</div>
+                            </div>
+                            <div class="combo-savings spicy-savings-text">
+                                <i class="fas fa-piggy-bank"></i>
+                                <span>Ahorras <strong>Bs. 20</strong></span>
+                            </div>
+                        </div>
+                        
+                        <div class="combo-actions">
+                            <button class="combo-btn spicy-btn add-to-cart" data-product="combo-inferno">
+                                <i class="fas fa-fire"></i> ¡Acepto el Reto!
+                            </button>
+                            <button class="combo-details-btn" data-product-detail="combo-inferno">
+                                <i class="fas fa-info-circle"></i> Detalles
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Información adicional -->
+            <div class="combo-extra-info">
+                <div class="extra-info-card">
+                    <i class="fas fa-sync-alt"></i>
+                    <h4>Personalizable</h4>
+                    <p>Puedes cambiar ingredientes en tu combo</p>
+                </div>
+                <div class="extra-info-card">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h4>Envío Gratis</h4>
+                    <p>En compras mayores a Bs. 150</p>
+                </div>
+                <div class="extra-info-card">
+                    <i class="fas fa-clock"></i>
+                    <h4>Rápido</h4>
+                    <p>Preparación en máximo 25 minutos</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Acompañamientos -->
+        <section class="acompanamientos" id="acompanamientos">
+            <div class="section-header">
+                <h2 class="section-title">Acompañamientos</h2>
+                <p class="section-subtitle">Perfectos para complementar tu hamburguesa</p>
+            </div>
+
+            <!-- Filtros para acompañamientos -->
+            <div class="acompanamientos-filtros">
+                <button class="acompanamiento-filtro-btn active" data-filtro="todos">Todos</button>
+                <button class="acompanamiento-filtro-btn" data-filtro="papas">Papas</button>
+                <button class="acompanamiento-filtro-btn" data-filtro="empanizados">Empanizados</button>
+                <button class="acompanamiento-filtro-btn" data-filtro="pollos">Pollos</button>
+                <button class="acompanamiento-filtro-btn" data-filtro="ensaladas">Ensaladas</button>
+            </div>
+
+            <div class="acompanamientos-container">
+                <!-- Acompañamientos existentes -->
+                <!-- Papas Gajo con Especias -->
+                <article class="acompanamiento-card" id="papas-gajo" data-categoria="papas">
+                    <div class="card-badge" aria-label="Nuevo producto">Nuevo</div>
+                    <div class="acompanamiento-img">
+                        <div class="card-img">
+                            <img src="../imagenes/papas_gajos_gourmet.jpeg"
+                            alt="Papas gajo con piel y especias especiales"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <div class="acompanamiento-content">
+                        <h3><i class="fas fa-utensil-spoon"></i> Papas Gajo Gourmet</h3>
+                        <div class="acompanamiento-details">
+                            <div class="acompanamiento-price-section">
+                                <div class="acompanamiento-price">Bs. 18</div>
+                                <div class="acompanamiento-serving">Porción individual</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="papas-gajo">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="papas-gajo">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Papas con Chili y Queso -->
+                <article class="acompanamiento-card" id="papas-chili-queso" data-categoria="papas">
+                    <div class="card-badge" aria-label="Especial de la casa">Especial</div>
+                    <div class="acompanamiento-img">
+                        <div class="card-img">
+                            <img src="../imagenes/papas_con_chilli_y_queso.png"
+                            alt="Papas fritas con chili con carne y queso derretido"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <div class="acompanamiento-content">
+                        <h3><i class="fas fa-pepper-hot"></i> Papas con Chili y Queso</h3>
+                        <div class="acompanamiento-details">
+                            <div class="acompanamiento-price-section">
+                                <div class="acompanamiento-price">Bs. 32</div>
+                                <div class="acompanamiento-serving">Porción individual</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="papas-chili-queso">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="papas-chili-queso">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Papas Rusticas -->
+                <article class="acompanamiento-card" id="papas-rusticas" data-categoria="papas">
+                    <div class="acompanamiento-img">
+                        <div class="card-img">
+                            <img src="../imagenes/papas_rustica_con_romero.jpg"
+                             alt="Papas rústicas con romero y ajo"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <div class="acompanamiento-content">
+                        <h3><i class="fas fa-tree"></i> Papas Rústicas con Romero</h3>
+                        <div class="acompanamiento-details">
+                            <div class="acompanamiento-price-section">
+                                <div class="acompanamiento-price">Bs. 20</div>
+                                <div class="acompanamiento-serving">Porción individual</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="papas-rusticas">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="papas-rusticas">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Tostones -->
+                <article class="acompanamiento-card" id="tostones" data-categoria="empanizados">
+                    <div class="card-badge" aria-label="Especialidad caribeña">Caribeños</div>
+                    <div class="acompanamiento-img">
+                        <div class="card-img">
+                            <img src="../imagenes/tostones_caribeños.png"
+                            alt="Tostones de plátano verde fritos"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <div class="acompanamiento-content">
+                        <h3><i class="fas fa-lemon"></i> Tostones Caribeños</h3>
+                        <div class="acompanamiento-details">
+                            <div class="acompanamiento-price-section">
+                                <div class="acompanamiento-price">Bs. 24</div>
+                                <div class="acompanamiento-serving">8 piezas</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="tostones">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="tostones">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Camarones Empanizados -->
+                <article class="acompanamiento-card" id="camarones-empanizados" data-categoria="empanizados">
+                    <div class="card-badge" aria-label="Del mar">Mariscos</div>
+                    <div class="acompanamiento-img">
+                        <div class="card-img">
+                            <img src="../imagenes/camarones_empanisados.png"
+                            alt="Camarones empanizados con salsa cocktail"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <div class="acompanamiento-content">
+                        <h3><i class="fas fa-shrimp"></i> Camarones Empanizados</h3>
+                        <div class="acompanamiento-details">
+                            <div class="acompanamiento-price-section">
+                                <div class="acompanamiento-price">Bs. 45</div>
+                                <div class="acompanamiento-serving">8 piezas</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="camarones-empanizados">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="camarones-empanizados">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Alitas BBQ Picantes -->
+                <article class="acompanamiento-card" id="alitas-bbq-picante" data-categoria="pollos">
+                    <div class="card-badge" aria-label="Picante">🔥 Picante</div>
+                    <div class="acompanamiento-img">
+                        <div class="card-img">
+                            <img src="../imagenes/alitas_bbq.png"
+                            alt="Alitas de pollo en salsa BBQ picante"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <div class="acompanamiento-content">
+                        <h3><i class="fas fa-fire-alt"></i> Alitas BBQ Picantes</h3>
+                        <div class="acompanamiento-details">
+                            <div class="acompanamiento-price-section">
+                                <div class="acompanamiento-price">Bs. 38</div>
+                                <div class="acompanamiento-serving">6 piezas</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="alitas-bbq-picante">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="alitas-bbq-picante">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Palitos de Mozzarella -->
+                <article class="acompanamiento-card" id="palitos-mozzarella" data-categoria="empanizados">
+                    <div class="acompanamiento-img">
+                        <div class="card-img">
+                            <img src="../imagenes/palitos_de_mozzarella.jpg"
+                            alt="Palitos de mozzarella con pan de ajo"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <div class="acompanamiento-content">
+                        <h3><i class="fas fa-cheese"></i> Palitos de Mozzarella</h3>
+                        <div class="acompanamiento-details">
+                            <div class="acompanamiento-price-section">
+                                <div class="acompanamiento-price">Bs. 26</div>
+                                <div class="acompanamiento-serving">8 piezas</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="palitos-mozzarella">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="palitos-mozzarella">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Ensalada César -->
+                <article class="acompanamiento-card" id="ensalada-cesar" data-categoria="ensaladas">
+                    <div class="card-badge" aria-label="Opción saludable">Saludable</div>
+                    <div class="acompanamiento-img">
+                        <div class="card-img">
+                            <img src="../imagenes/ensalada_cesar_con_pollo.jpeg"
+                            alt="Ensalada César con pollo a la parrilla"
+                                loading="lazy"
+                            >
+                        </div>
+                    </div>
+                    <div class="acompanamiento-content">
+                        <h3><i class="fas fa-leaf"></i> Ensalada César con Pollo</h3>
+                        <div class="acompanamiento-details">
+                            <div class="acompanamiento-price-section">
+                                <div class="acompanamiento-price">Bs. 42</div>
+                                <div class="acompanamiento-serving">Porción individual</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="ensalada-cesar">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="ensalada-cesar">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Maicitos Fritos -->
+                <article class="acompanamiento-card" id="maicitos-fritos" data-categoria="empanizados">
+                    <div class="card-badge" aria-label="Crocantes">Crocantes</div>
+                    <div class="acompanamiento-img">
+                        <div class="card-img">
+                            <img src="../imagenes/frito_con_queso_parmesano.jpg"
+                             alt="Maicitos fritos con queso parmesano"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <div class="acompanamiento-content">
+                        <h3><i class="fas fa-corn"></i> Maicitos Fritos</h3>
+                        <div class="acompanamiento-details">
+                            <div class="acompanamiento-price-section">
+                                <div class="acompanamiento-price">Bs. 19</div>
+                                <div class="acompanamiento-serving">Porción individual</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="maicitos-fritos">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="maicitos-fritos">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Croquetas de Jamón -->
+                <article class="acompanamiento-card" id="croquetas-jamon" data-categoria="empanizados">
+                    <div class="card-badge" aria-label="Tradicional español">Españolas</div>
+                    <div class="acompanamiento-img">
+                        <div class="card-img">
+                            <img src="../imagenes/croquetas_de_jamon_serrano.png"
+                            alt="Croquetas de jamón serrano cremosas"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <div class="acompanamiento-content">
+                        <h3><i class="fas fa-piggy-bank"></i> Croquetas de Jamón Serrano</h3>
+                        <div class="acompanamiento-details">
+                            <div class="acompanamiento-price-section">
+                                <div class="acompanamiento-price">Bs. 30</div>
+                                <div class="acompanamiento-serving">6 piezas</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="croquetas-jamon">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="croquetas-jamon">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Aros de Pimiento -->
+                <article class="acompanamiento-card" id="aros-pimiento" data-categoria="empanizados">
+                    <div class="card-badge" aria-label="Vegetariano">Vegetariano</div>
+                    <div class="acompanamiento-img">
+                        <div class="card-img">
+                            <img src="../imagenes/aros_de_pimiento_con_queso.jpg"
+                            alt="Aros de pimiento rellenos de queso"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <div class="acompanamiento-content">
+                        <h3><i class="fas fa-pepper-hot"></i> Aros de Pimiento con Queso</h3>
+                        <div class="acompanamiento-details">
+                            <div class="acompanamiento-price-section">
+                                <div class="acompanamiento-price">Bs. 23</div>
+                                <div class="acompanamiento-serving">6 piezas</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="aros-pimiento">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="aros-pimiento">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Nuggets de Queso -->
+                <article class="acompanamiento-card" id="nuggets-queso" data-categoria="empanizados">
+                    <div class="card-badge" aria-label="Irresistibles">Quesosos</div>
+                    <div class="acompanamiento-img">
+                        <div class="card-img">
+                            <img src="../imagenes/nuggets_de_queso.jpg"
+                            alt="Nuggets de queso fundente"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <div class="acompanamiento-content">
+                        <h3><i class="fas fa-cheese"></i> Nuggets de Queso</h3>
+                        <div class="acompanamiento-details">
+                            <div class="acompanamiento-price-section">
+                                <div class="acompanamiento-price">Bs. 27</div>
+                                <div class="acompanamiento-serving">10 piezas</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="nuggets-queso">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="nuggets-queso">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Brochetas de Pollo -->
+                <article class="acompanamiento-card" id="brochetas-pollo" data-categoria="pollos">
+                    <div class="card-badge" aria-label="A la parrilla">Parrilla</div>
+                    <div class="acompanamiento-img">
+                        <div class="card-img">
+                            <img src="../imagenes/brochetas_de_pollo.png"
+                            alt="Brochetas de pollo con vegetales"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <div class="acompanamiento-content">
+                        <h3><i class="fas fa-utensils"></i> Brochetas de Pollo</h3>
+                        <div class="acompanamiento-details">
+                            <div class="acompanamiento-price-section">
+                                <div class="acompanamiento-price">Bs. 40</div>
+                                <div class="acompanamiento-serving">3 brochetas</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="brochetas-pollo">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="brochetas-pollo">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Papas con Guacamole -->
+                <article class="acompanamiento-card" id="papas-guacamole" data-categoria="papas">
+                    <div class="card-badge" aria-label="Especial mexicano">Mexicano</div>
+                    <div class="acompanamiento-img">
+                        <div class="card-img">
+                            <img src="../imagenes/papas_con_guacamole.png"
+                            alt="Papas fritas con guacamole fresco"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <div class="acompanamiento-content">
+                        <h3><i class="fas fa-avocado"></i> Papas con Guacamole</h3>
+                        <div class="acompanamiento-details">
+                            <div class="acompanamiento-price-section">
+                                <div class="acompanamiento-price">Bs. 28</div>
+                                <div class="acompanamiento-serving">Porción individual</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="papas-guacamole">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="papas-guacamole">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Ensalada Griega -->
+                <article class="acompanamiento-card" id="ensalada-griega" data-categoria="ensaladas">
+                    <div class="card-badge" aria-label="Estilo mediterráneo">Mediterránea</div>
+                    <div class="acompanamiento-img">
+                        <div class="card-img">
+                            <img src="../imagenes/ensalada_griega.png"
+                            alt="Ensalada griega con queso feta y aceitunas"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <div class="acompanamiento-content">
+                        <h3><i class="fas fa-leaf"></i> Ensalada Griega</h3>
+                        <div class="acompanamiento-details">
+                            <div class="acompanamiento-price-section">
+                                <div class="acompanamiento-price">Bs. 38</div>
+                                <div class="acompanamiento-serving">Porción individual</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="ensalada-griega">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="ensalada-griega">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección Bebidas -->
+        <section class="bebidas" id="bebidas">
+            <div class="section-header">
+                <h2 class="section-title">Bebidas Refrescantes</h2>
+                <p class="section-subtitle">Para acompañar tu comida perfectamente</p>
+            </div>
+
+            <!-- Filtros para bebidas -->
+            <div class="bebidas-filtros">
+                <button class="bebida-filtro-btn active" data-filtro-bebida="todos">
+                    <i class="fas fa-star"></i> Todas
+                </button>
+                <button class="bebida-filtro-btn" data-filtro-bebida="gaseosas">
+                    <i class="fas fa-wine-bottle"></i> Gaseosas
+                </button>
+                <button class="bebida-filtro-btn" data-filtro-bebida="cervezas">
+                    <i class="fas fa-beer"></i> Cervezas
+                </button>
+                <button class="bebida-filtro-btn" data-filtro-bebida="naturales">
+                    <i class="fas fa-glass-whiskey"></i> Naturales
+                </button>
+                <button class="bebida-filtro-btn" data-filtro-bebida="especiales">
+                    <i class="fas fa-cocktail"></i> Especiales
+                </button>
+            </div>
+            
+            <div class="bebidas-container">
+                <!-- Bebidas existentes -->
+                <!-- Coca-Cola -->
+                <article class="bebida-card" id="coca-cola-500ml" data-categoria="gaseosas">
+                    <div class="bebida-badge">Clásica</div>
+                    <div class="bebida-img">
+                        <div class="card-img">
+                          <img src="../imagenes/coca_cola.png" alt="Coca-Cola 500ml" loading="lazy"></div>
+                        <div class="bebida-type">
+                            <i class="fas fa-wine-bottle"></i> Gaseosa
+                        </div>
+                    </div>
+                    <div class="bebida-content">
+                        <h3 class="bebida-title">
+                            <i class="fas fa-wine-bottle"></i> Coca-Cola
+                        </h3>
+                        <div class="bebida-details">
+                            <div class="bebida-info">
+                                <div class="bebida-price">Bs. 12</div>
+                                <div class="bebida-size">500ml</div>
+                                <div class="bebida-sabor">Clásica</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="coca-cola-500ml">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="coca-cola-500ml">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Sprite -->
+                <article class="bebida-card" id="sprite-500ml" data-categoria="gaseosas">
+                    <div class="bebida-badge">Limón</div>
+                    <div class="bebida-img">
+                        <div class="card-img">
+                            <img src="../imagenes/sprite.png"
+                                                            alt="Sprite 500ml"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="bebida-type">
+                            <i class="fas fa-wine-bottle"></i> Gaseosa
+                        </div>
+                    </div>
+                    <div class="bebida-content">
+                        <h3 class="bebida-title">
+                            <i class="fas fa-wine-bottle"></i> Sprite
+                        </h3>
+                        <div class="bebida-details">
+                            <div class="bebida-info">
+                                <div class="bebida-price">Bs. 12</div>
+                                <div class="bebida-size">500ml</div>
+                                <div class="bebida-sabor">Limón Lima</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="sprite-500ml">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="sprite-500ml">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Fanta -->
+                <article class="bebida-card" id="fanta-naranja" data-categoria="gaseosas">
+                    <div class="bebida-badge">Naranja</div>
+                    <div class="bebida-img">
+                        <div class="card-img">
+                            <img src="../imagenes/fanta_naranja.png"  
+                                alt="Fanta Naranja 500ml"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="bebida-type">
+                            <i class="fas fa-wine-bottle"></i> Gaseosa
+                        </div>
+                    </div>
+                    <div class="bebida-content">
+                        <h3 class="bebida-title">
+                            <i class="fas fa-wine-bottle"></i> Fanta Naranja
+                        </h3>
+                        <div class="bebida-details">
+                            <div class="bebida-info">
+                                <div class="bebida-price">Bs. 12</div>
+                                <div class="bebida-size">500ml</div>
+                                <div class="bebida-sabor">Naranja</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="fanta-naranja">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="fanta-naranja">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Pepsi -->
+                <article class="bebida-card" id="pepsi-500ml" data-categoria="gaseosas">
+                    <div class="bebida-badge">Alternativa</div>
+                    <div class="bebida-img">
+                        <div class="card-img">
+                           <img src="../imagenes/pepsi.png" 
+                                 
+                                alt="Pepsi 500ml"
+                                loading="lazy" >
+                        </div>
+                        <div class="bebida-type">
+                            <i class="fas fa-wine-bottle"></i> Gaseosa
+                        </div>
+                    </div>
+                    <div class="bebida-content">
+                        <h3 class="bebida-title">
+                            <i class="fas fa-wine-bottle"></i> Pepsi
+                        </h3>
+                        <div class="bebida-details">
+                            <div class="bebida-info">
+                                <div class="bebida-price">Bs. 11</div>
+                                <div class="bebida-size">500ml</div>
+                                <div class="bebida-sabor">Cola</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="pepsi-500ml">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="pepsi-500ml">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Inca Kola -->
+                <article class="bebida-card" id="inca-kola" data-categoria="gaseosas">
+                    <div class="bebida-badge">Dorada</div>
+                    <div class="bebida-img">
+                        <div class="card-img">
+                            <img src="../imagenes/inka_cola.png" 
+                                alt="Inca Kola 500ml"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="bebida-type">
+                            <i class="fas fa-wine-bottle"></i> Gaseosa
+                        </div>
+                    </div>
+                    <div class="bebida-content">
+                        <h3 class="bebida-title">
+                            <i class="fas fa-wine-bottle"></i> Inca Kola
+                        </h3>
+                        <div class="bebida-details">
+                            <div class="bebida-info">
+                                <div class="bebida-price">Bs. 12</div>
+                                <div class="bebida-size">500ml</div>
+                                <div class="bebida-sabor">Hierba Luisa</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="inca-kola">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="inca-kola">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 7UP -->
+                <article class="bebida-card" id="seven-up" data-categoria="gaseosas">
+                    <div class="bebida-badge">Refrescante</div>
+                    <div class="bebida-img">
+                        <div class="card-img">
+                            <img src="../imagenes/7up.png"
+                            alt="7UP 500ml"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="bebida-type">
+                            <i class="fas fa-wine-bottle"></i> Gaseosa
+                        </div>
+                    </div>
+                    <div class="bebida-content">
+                        <h3 class="bebida-title">
+                            <i class="fas fa-wine-bottle"></i> 7UP
+                        </h3>
+                        <div class="bebida-details">
+                            <div class="bebida-info">
+                                <div class="bebida-price">Bs. 11</div>
+                                <div class="bebida-size">500ml</div>
+                                <div class="bebida-sabor">Limón</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="seven-up">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="seven-up">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Jugo de Naranja Natural -->
+                <article class="bebida-card" id="jugo-naranja" data-categoria="naturales">
+                    <div class="bebida-badge">Vitamina C</div>
+                    <div class="bebida-img">
+                        <div class="card-img">
+                            <img src="../imagenes/jugo_de_naranja.jpg"
+                            alt="Jugo de naranja natural"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="bebida-type">
+                            <i class="fas fa-glass-whiskey"></i> Jugo Natural
+                        </div>
+                    </div>
+                    <div class="bebida-content">
+                        <h3 class="bebida-title">
+                            <i class="fas fa-glass-whiskey"></i> Jugo de Naranja
+                        </h3>
+                        <div class="bebida-details">
+                            <div class="bebida-info">
+                                <div class="bebida-price">Bs. 16</div>
+                                <div class="bebida-size">500ml</div>
+                                <div class="bebida-sabor">Naranja Dulce</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="jugo-naranja">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="jugo-naranja">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Jugo de Piña Natural -->
+                <article class="bebida-card" id="jugo-pina" data-categoria="naturales">
+                    <div class="bebida-badge">Digestivo</div>
+                    <div class="bebida-img">
+                        <div class="card-img">
+                            <img src="../imagenes/jugo_de_piña.png"
+                            alt="Jugo de piña natural"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="bebida-type">
+                            <i class="fas fa-glass-whiskey"></i> Jugo Natural
+                        </div>
+                    </div>
+                    <div class="bebida-content">
+                        <h3 class="bebida-title">
+                            <i class="fas fa-glass-whiskey"></i> Jugo de Piña
+                        </h3>
+                        <div class="bebida-details">
+                            <div class="bebida-info">
+                                <div class="bebida-price">Bs. 15</div>
+                                <div class="bebida-size">500ml</div>
+                                <div class="bebida-sabor">Piña Fresca</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="jugo-pina">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="jugo-pina">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Jugo de Maracuyá -->
+                <article class="bebida-card" id="jugo-maracuya" data-categoria="naturales">
+                    <div class="bebida-badge">Exótico</div>
+                    <div class="bebida-img">
+                        <div class="card-img">
+                            <img src="../imagenes/jugo_de_maracuya.png"
+                            alt="Jugo de maracuyá natural"
+                                loading="lazy">
+                        </div>
+                        <div class="bebida-type">
+                            <i class="fas fa-glass-whiskey"></i> Jugo Natural
+                        </div>
+                    </div>
+                    <div class="bebida-content">
+                        <h3 class="bebida-title">
+                            <i class="fas fa-glass-whiskey"></i> Jugo de Maracuyá
+                        </h3>
+                        <div class="bebida-details">
+                            <div class="bebida-info">
+                                <div class="bebida-price">Bs. 18</div>
+                                <div class="bebida-size">500ml</div>
+                                <div class="bebida-sabor">Maracuyá</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="jugo-maracuya">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="jugo-maracuya">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Jugo de Papaya -->
+                <article class="bebida-card" id="jugo-papaya" data-categoria="naturales">
+                    <div class="bebida-badge">Digestivo</div>
+                    <div class="bebida-img">
+                        <div class="card-img">
+                            <img src="../imagenes/jugo_de_papaya.avif" alt="Jugo de papaya natural"
+                                loading="lazy">
+                        </div>
+                        <div class="bebida-type">
+                            <i class="fas fa-glass-whiskey"></i> Jugo Natural
+                        </div>
+                    </div>
+                    <div class="bebida-content">
+                        <h3 class="bebida-title">
+                            <i class="fas fa-glass-whiskey"></i> Jugo de Papaya
+                        </h3>
+                        <div class="bebida-details">
+                            <div class="bebida-info">
+                                <div class="bebida-price">Bs. 14</div>
+                                <div class="bebida-size">500ml</div>
+                                <div class="bebida-sabor">Papaya</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="jugo-papaya">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="jugo-papaya">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Mocochinchi -->
+                <article class="bebida-card" id="mocochinchi" data-categoria="naturales">
+                    <div class="bebida-badge">Boliviano</div>
+                    <div class="bebida-img">
+                        <div class="card-img">
+                            <img src="../imagenes/mocochinchi.png"
+                            alt="Mocochinchi tradicional"
+                                loading="lazy">
+                        </div>
+                        <div class="bebida-type">
+                            <i class="fas fa-glass-whiskey"></i> Bebida Tradicional
+                        </div>
+                    </div>
+                    <div class="bebida-content">
+                        <h3 class="bebida-title">
+                            <i class="fas fa-glass-whiskey"></i> Mocochinchi
+                        </h3>
+                        <div class="bebida-details">
+                            <div class="bebida-info">
+                                <div class="bebida-price">Bs. 10</div>
+                                <div class="bebida-size">500ml</div>
+                                <div class="bebida-sabor">Durazno Seco</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="mocochinchi">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="mocochinchi">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Limonada de Menta -->
+                <article class="bebida-card" id="limonada-menta" data-categoria="naturales">
+                    <div class="bebida-badge">Refrescante</div>
+                    <div class="bebida-img">
+                        <div class="card-img">
+                            <img src="../imagenes/limonada_de_menta.png"
+                            alt="Limonada con menta fresca"
+                                loading="lazy">
+                        </div>
+                        <div class="bebida-type">
+                            <i class="fas fa-lemon"></i> Limonada
+                        </div>
+                    </div>
+                    <div class="bebida-content">
+                        <h3 class="bebida-title">
+                            <i class="fas fa-lemon"></i> Limonada de Menta
+                        </h3>
+                        <div class="bebida-details">
+                            <div class="bebida-info">
+                                <div class="bebida-price">Bs. 16</div>
+                                <div class="bebida-size">500ml</div>
+                                <div class="bebida-sabor">Limón con Menta</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="limonada-menta">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="limonada-menta">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Agua con Gas -->
+                <article class="bebida-card" id="agua-gas" data-categoria="naturales">
+                    <div class="bebida-badge">Efervescente</div>
+                    <div class="bebida-img">
+                        <div class="card-img">
+                            <img src="../imagenes/agua_con_gas.png"
+                            alt="Agua mineral con gas"
+                                loading="lazy">
+                        </div>
+                        <div class="bebida-type">
+                            <i class="fas fa-tint"></i> Agua
+                        </div>
+                    </div>
+                    <div class="bebida-content">
+                        <h3 class="bebida-title">
+                            <i class="fas fa-tint"></i> Agua con Gas
+                        </h3>
+                        <div class="bebida-details">
+                            <div class="bebida-info">
+                                <div class="bebida-price">Bs. 9</div>
+                                <div class="bebida-size">500ml</div>
+                                <div class="bebida-sabor">Natural</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="agua-gas">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="agua-gas">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Malteada de Chocolate -->
+                <article class="bebida-card featured" id="malteada-chocolate" data-categoria="especiales">
+                    <div class="bebida-badge">Clásica</div>
+                    <div class="bebida-img">
+                        <div class="card-img">
+                           <img src="../imagenes/mateada_de_chocolate.png"
+                           alt="Malteada de chocolate"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="bebida-type">
+                            <i class="fas fa-ice-cream"></i> Malteada
+                        </div>
+                    </div>
+                    <div class="bebida-content">
+                        <h3 class="bebida-title">
+                            <i class="fas fa-ice-cream"></i> Malteada de Chocolate
+                        </h3>
+                        <div class="bebida-details">
+                            <div class="bebida-info">
+                                <div class="bebida-price">Bs. 25</div>
+                                <div class="bebida-size">400ml</div>
+                                <div class="bebida-sabor">Chocolate</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="malteada-chocolate">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="malteada-chocolate">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Malteada de Vainilla -->
+                <article class="bebida-card featured" id="malteada-vainilla" data-categoria="especiales">
+                    <div class="bebida-badge">Cremosa</div>
+                    <div class="bebida-img">
+                        <div class="card-img">
+                            <img src="../imagenes/malteada_de_vainilla.jpg"
+                            alt="Malteada de vainilla"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="bebida-type">
+                            <i class="fas fa-ice-cream"></i> Malteada
+                        </div>
+                    </div>
+                    <div class="bebida-content">
+                        <h3 class="bebida-title">
+                            <i class="fas fa-ice-cream"></i> Malteada de Vainilla
+                        </h3>
+                        <div class="bebida-details">
+                            <div class="bebida-info">
+                                <div class="bebida-price">Bs. 25</div>
+                                <div class="bebida-size">400ml</div>
+                                <div class="bebida-sabor">Vainilla</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="malteada-vainilla">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="malteada-vainilla">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Malteada de Fresa -->
+                <article class="bebida-card featured" id="malteada-fresa" data-categoria="especiales">
+                    <div class="bebida-badge">Frutal</div>
+                    <div class="bebida-img">
+                        <div class="card-img">
+                            <img src="../imagenes/malteada_de_fresa.jpg"
+                            alt="Malteada de fresa"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="bebida-type">
+                            <i class="fas fa-ice-cream"></i> Malteada
+                        </div>
+                    </div>
+                    <div class="bebida-content">
+                        <h3 class="bebida-title">
+                            <i class="fas fa-ice-cream"></i> Malteada de Fresa
+                        </h3>
+                        <div class="bebida-details">
+                            <div class="bebida-info">
+                                <div class="bebida-price">Bs. 25</div>
+                                <div class="bebida-size">400ml</div>
+                                <div class="bebida-sabor">Fresa</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="malteada-fresa">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="malteada-fresa">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Cerveza Paceña -->
+                <article class="bebida-card" id="cerveza-pacena" data-categoria="cervezas">
+                    <div class="bebida-badge">La Paz</div>
+                    <div class="bebida-img">
+                        <div class="card-img">
+                            <img src="../imagenes/cerveza_paceña.png"
+                            alt="Cerveza Paceña"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="bebida-type">
+                            <i class="fas fa-beer"></i> Cerveza
+                        </div>
+                    </div>
+                    <div class="bebida-content">
+                        <h3 class="bebida-title">
+                            <i class="fas fa-beer"></i> Cerveza Paceña
+                        </h3>
+                        <div class="bebida-details">
+                            <div class="bebida-info">
+                                <div class="bebida-price">Bs. 18</div>
+                                <div class="bebida-size">355ml</div>
+                                <div class="bebida-sabor">Lager</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="cerveza-pacena">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="cerveza-pacena">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Cerveza Huari -->
+                <article class="bebida-card" id="cerveza-huari" data-categoria="cervezas">
+                    <div class="bebida-badge">Oruro</div>
+                    <div class="bebida-img">
+                        <div class="card-img">
+                            <img src="../imagenes/cerveza_huari.png"
+                            alt="Cerveza Huari"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="bebida-type">
+                            <i class="fas fa-beer"></i> Cerveza
+                        </div>
+                    </div>
+                    <div class="bebida-content">
+                        <h3 class="bebida-title">
+                            <i class="fas fa-beer"></i> Cerveza Huari
+                        </h3>
+                        <div class="bebida-details">
+                            <div class="bebida-info">
+                                <div class="bebida-price">Bs. 18</div>
+                                <div class="bebida-size">355ml</div>
+                                <div class="bebida-sabor">Pilsener</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="cerveza-huari">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="cerveza-huari">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Cerveza Ducal -->
+                <article class="bebida-card" id="cerveza-ducal" data-categoria="cervezas">
+                    <div class="bebida-badge">Santa Cruz</div>
+                    <div class="bebida-img">
+                        <div class="card-img">
+                            <img src="../imagenes/cerveza_ducal.png"
+                             alt="Cerveza Ducal"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="bebida-type">
+                            <i class="fas fa-beer"></i> Cerveza
+                        </div>
+                    </div>
+                    <div class="bebida-content">
+                        <h3 class="bebida-title">
+                            <i class="fas fa-beer"></i> Cerveza Ducal
+                        </h3>
+                        <div class="bebida-details">
+                            <div class="bebida-info">
+                                <div class="bebida-price">Bs. 17</div>
+                                <div class="bebida-size">355ml</div>
+                                <div class="bebida-sabor">Rubia</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="cerveza-ducal">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="cerveza-ducal">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Cerveza Corona -->
+                <article class="bebida-card" id="cerveza-corona" data-categoria="cervezas">
+                    <div class="bebida-badge">Importada</div>
+                    <div class="bebida-img">
+                        <div class="card-img">
+                            <img src="../imagenes/cerveza_corona.png"
+                            alt="Cerveza Corona"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="bebida-type">
+                            <i class="fas fa-beer"></i> Cerveza
+                        </div>
+                    </div>
+                    <div class="bebida-content">
+                        <h3 class="bebida-title">
+                            <i class="fas fa-beer"></i> Cerveza Corona
+                        </h3>
+                        <div class="bebida-details">
+                            <div class="bebida-info">
+                                <div class="bebida-price">Bs. 22</div>
+                                <div class="bebida-size">355ml</div>
+                                <div class="bebida-sabor">Clara</div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn add-to-cart" data-product="cerveza-corona">
+                                    <i class="fas fa-cart-plus"></i> Ordenar
+                                </button>
+                                <button class="btn btn-details" data-product-detail="cerveza-corona">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Detalle del Producto -->
+        <div class="producto-detalle" role="dialog" aria-labelledby="detalle-titulo" aria-hidden="true">
+            <div class="detalle-container">
+                <button class="detalle-cerrar" aria-label="Cerrar detalle">&times;</button>
+                <div class="detalle-header">
+                    <div class="detalle-categoria" id="detalle-categoria"></div>
+                    <h2 id="detalle-titulo" class="detalle-nombre"></h2>
+                </div>
+                <div class="detalle-contenido">
+                    <div class="detalle-imagen">
+                        <img id="detalle-imagen" src="" alt="">
+                    </div>
+                    <div class="detalle-descripcion" id="detalle-descripcion"></div>
+                    <div class="detalle-ingredientes">
+                        <h4><i class="fas fa-list"></i> Ingredientes</h4>
+                        <ul id="detalle-ingredientes-lista"></ul>
+                    </div>
+                    <div class="detalle-precio">
+                        <div class="price" id="detalle-precio"></div>
+                    </div>
+                    <div class="detalle-acciones">
+                        <button class="btn-ordenar-detalle" id="detalle-ordenar-btn">
+                            <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carrito de compras flotante -->
+        <div class="cart-floating" aria-live="polite" aria-label="Carrito de compras">
+            <button class="cart-toggle" aria-label="Ver carrito">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </button>
+        </div>
+
+        <!-- Modal del carrito -->
+        <div class="cart-modal" id="cart-modal" role="dialog" aria-labelledby="cart-modal-title" aria-hidden="true">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="cart-modal-title"><i class="fas fa-shopping-cart"></i> Tu Carrito</h3>
+                    <button class="close-modal" aria-label="Cerrar carrito">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="cart-items" id="cart-items">
+                        <p class="empty-cart">Tu carrito está vacío</p>
+                    </div>
+                    
+                    <!-- Totales -->
+                    <div class="cart-totals" id="cart-totals" style="display: none;">
+                        <div class="cart-total-row">
+                            <span>Subtotal:</span>
+                            <span class="cart-total-value" id="subtotal">Bs. 0</span>
+                        </div>
+                        <div class="cart-total-row">
+                            <span>IVA (13%):</span>
+                            <span class="cart-total-value" id="iva">Bs. 0</span>
+                        </div>
+                        <div class="cart-total-row">
+                            <span>Envío:</span>
+                            <span class="cart-total-value" id="envio">Bs. 0</span>
+                        </div>
+                        <div class="cart-total-row total">
+                            <span>Total:</span>
+                            <span class="cart-total-value" id="total">Bs. 0</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Formulario del cliente -->
+                    <div class="customer-info-section" id="customer-section" style="display: none;">
+                        <h4><i class="fas fa-user"></i> Datos del Cliente</h4>
+                        <form id="customer-form" novalidate>
+                            <div class="customer-form-grid">
+                                <div class="customer-form-group">
+                                    <label for="cart-customer-name" class="required-field">Nombre Completo</label>
+                                    <input type="text" id="cart-customer-name" name="name" required 
+                                           placeholder="Juana Pérez" aria-required="true">
+                                </div>
+                                <div class="customer-form-group">
+                                    <label for="cart-customer-phone" class="required-field">Teléfono</label>
+                                    <input type="tel" id="cart-customer-phone" name="phone" required 
+                                           placeholder="70000000" aria-required="true">
+                                </div>
+                                <div class="customer-form-group full-width">
+                                    <label for="cart-customer-email">Email</label>
+                                    <input type="email" id="cart-customer-email" name="email" 
+                                           placeholder="correo@ejemplo.com">
+                                </div>
+                                <div class="customer-form-group full-width">
+                                    <label for="cart-customer-address">Dirección de Entrega</label>
+                                    <input type="text" id="cart-customer-address" name="address" 
+                                           placeholder="Av. Principal #123, Ciudad">
+                                </div>
+                                <div class="customer-form-group full-width">
+                                    <label for="cart-customer-notes">Notas adicionales</label>
+                                    <textarea id="cart-customer-notes" name="notes" rows="3"
+                                              placeholder="Instrucciones especiales para la entrega..."></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Métodos de Pago -->
+                    <div class="payment-section" id="payment-section" style="display: none;">
+                        <h4><i class="fas fa-credit-card"></i> Método de Pago</h4>
+                        <div class="payment-methods" id="payment-methods">
+                            <button class="payment-method-btn" data-method="efectivo">
+                                <i class="fas fa-money-b
+                                                                <div class="payment-method-info">
+                                    <h4>Efectivo</h4>
+                                    <p>Paga al recibir tu pedido</p>
+                                </div>
+                                <div class="payment-check"><i class="fas fa-check-circle"></i></div>
+                            </button>
+                            
+                            <button class="payment-method-btn" data-method="tarjeta">
+                                <i class="fas fa-credit-card"></i>
+                                <div class="payment-method-info">
+                                    <h4>Tarjeta Débito/Crédito</h4>
+                                    <p>Pago con tarjeta al momento de la entrega</p>
+                                </div>
+                                <div class="payment-check"><i class="fas fa-check-circle"></i></div>
+                            </button>
+                            
+                            <button class="payment-method-btn" data-method="qr">
+                                <i class="fas fa-qrcode"></i>
+                                <div class="payment-method-info">
+                                    <h4>Transferencia QR</h4>
+                                    <p>Pago digital con código QR</p>
+                                </div>
+                                <div class="payment-check"><i class="fas fa-check-circle"></i></div>
+                            </button>
+                        </div>
+                        
+                        <!-- Información adicional para QR -->
+                        <div class="qr-info" id="qr-info" style="display: none;">
+                            <div class="qr-code-container">
+                                <div class="qr-code">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BURGUES-BEAST-ORDER-123456" 
+                                         alt="Código QR para pago">
+                                </div>
+                                <div class="qr-instructions">
+                                    <h5><i class="fas fa-info-circle"></i> Instrucciones para pago QR:</h5>
+                                    <ol>
+                                        <li>Escanea el código QR con tu app de banca móvil</li>
+                                        <li>Confirma el monto: <strong id="qr-amount">Bs. 0</strong></li>
+                                        <li>Envía el comprobante por WhatsApp al: <strong>+591 1234-5678</strong></li>
+                                        <li>Tu pedido será procesado inmediatamente</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Información para tarjeta -->
+                        <div class="card-info" id="card-info" style="display: none;">
+                            <div class="card-instructions">
+                                <h5><i class="fas fa-credit-card"></i> Pago con Tarjeta:</h5>
+                                <ul>
+                                    <li>Nuestro repartidor llevará terminal POS</li>
+                                    <li>Aceptamos Bisa, Mercantil, Union</li>
+                                    <li>Puedes pagar en efectivo la diferencia si tu tarjeta tiene límite</li>
+                                    <li>No hay cargos adicionales por pago con tarjeta</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Steps -->
+                    <div class="progress-steps" id="progress-steps" style="display: none;">
+                        <div class="progress-step" id="step-cart">
+                            <div class="step-number">1</div>
+                            <div class="step-label">Carrito</div>
+                        </div>
+                        <div class="progress-step" id="step-customer">
+                            <div class="step-number">2</div>
+                            <div class="step-label">Datos</div>
+                        </div>
+                        <div class="progress-step" id="step-payment">
+                            <div class="step-number">3</div>
+                            <div class="step-label">Pago</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Botones de navegación -->
+                    <div class="cart-navigation" id="cart-navigation" style="display: none;">
+                        <div class="step-buttons">
+                            <button class="btn btn-secondary" id="back-to-cart">
+                                <i class="fas fa-arrow-left"></i> Volver al Carrito
+                            </button>
+                            <button class="btn" id="next-to-payment">
+                                <i class="fas fa-arrow-right"></i> Continuar con Datos
+                            </button>
+                        </div>
+                        
+                        <div class="step-buttons" id="payment-buttons" style="display: none;">
+                            <button class="btn btn-secondary" id="back-to-customer">
+                                <i class="fas fa-arrow-left"></i> Volver a Datos
+                            </button>
+                            <button class="btn btn-success" id="send-order-btn">
+                                <i class="fas fa-paper-plane"></i> Enviar Pedido
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Botones de acción básicos -->
+                    <div class="cart-actions" id="basic-actions">
+                        <button class="btn btn-secondary" id="clear-cart">
+                            <i class="fas fa-trash-alt"></i> Vaciar Carrito
+                        </button>
+                        <button class="btn" id="start-checkout">
+                            <i class="fas fa-credit-card"></i> Proceder al Pago
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+      <!-- Sección Horarios y Contacto -->
+        <section class="info-section" id="horarios" aria-labelledby="horarios-title">
+            <div class="section-header">
+                <h2 id="horarios-title" class="section-title">Horarios y Contacto</h2>
+                <p class="section-subtitle">Estamos para servirte cuando más lo necesitas</p>
+            </div>
+            
+            <div class="info-container">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Horarios de Atención</h3>
+                        <ul class="info-list">
+                            <li><i class="fas fa-sun" aria-hidden="true"></i> <strong>Lunes a Viernes:</strong> 11:00 - 23:00</li>
+                            <li><i class="fas fa-moon" aria-hidden="true"></i> <strong>Sábados:</strong> 11:00 - 00:00</li>
+                            <li><i class="fas fa-star" aria-hidden="true"></i> <strong>Domingos:</strong> 11:00 - 22:00</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Contacto</h3>
+                        <ul class="info-list">
+                            <li><i class="fas fa-phone-alt" aria-hidden="true"></i> <strong>Teléfono:</strong> +591 1234-5678</li>
+                            <li><i class="fas fa-whatsapp" aria-hidden="true"></i> <strong>WhatsApp:</strong> +591 1234-5678</li>
+                            <li><i class="fas fa-envelope" aria-hidden="true"></i> <strong>Email:</strong> info@burguesbeast.com</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-credit-card" aria-hidden="true"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Métodos de Pago</h3>
+                        <ul class="info-list">
+                            <li><i class="fas fa-money-bill-wave" aria-hidden="true"></i> <strong>Efectivo</strong> (Bs.)</li>
+                            <li><i class="fas fa-credit-card" aria-hidden="true"></i> <strong>Tarjetas</strong> Débito/Crédito</li>
+                            <li><i class="fas fa-qrcode" aria-hidden="true"></i> <strong>Transferencias</strong> QR</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-truck" aria-hidden="true"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Envíos y Tiempos</h3>
+                        <ul class="info-list">
+                            <li><i class="fas fa-shipping-fast" aria-hidden="true"></i> <strong>Envío Gratis:</strong> Compras mayores a Bs. 150</li>
+                            <li><i class="fas fa-clock" aria-hidden="true"></i> <strong>Tiempo de entrega:</strong> 30-45 minutos</li>
+                            <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <strong>Zona de cobertura:</strong> Ciudad completa</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+   <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>BURGUES BEAST</h3>
+                <p>Los mejores sabores de Bolivia en cada hamburguesa. Calidad, sabor y precios justos.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Enlaces Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="#catalogo"><i class="fas fa-fire"></i> Catálogo</a></li>
+                    <li><a href="#combos"><i class="fas fa-crown"></i> Combos</a></li>
+                    <li><a href="#acompanamientos"><i class="fas fa-star"></i> Acompañamientos</a></li>
+                    <li><a href="#bebidas"><i class="fas fa-bolt"></i> Bebidas</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Información</h3>
+                <ul class="footer-links">
+                    <li><a href="#horarios"><i class="fas fa-clock"></i> Horarios</a></li>
+                    <li><a href="#"><i class="fas fa-truck"></i> Envíos</a></li>
+                    <li><a href="#"><i class="fas fa-shield-alt"></i> Políticas</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p>Suscríbete para recibir ofertas especiales</p>
+                <form class="newsletter-form" id="newsletter-form" novalidate>
+                    <div class="form-group">
+                        <input 
+                            type="email" 
+                            id="newsletter-email" 
+                            placeholder="Tu correo electrónico" 
+                            required
+                            aria-label="Correo electrónico para newsletter"
+                        >
+                        <div class="error-message" id="email-error"></div>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Suscribirse</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2025 Burgues Beast - Todos los derechos reservados</p>
+            <p>Desarrollado por <a href="#">Bit Nube</a></p>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="javascript.js" defer></script>
+</body>
+</html>
